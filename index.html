@@ -12,6 +12,18 @@
                 height: 700px;
                 background-repeat: no-repeat;
             }
+            .card{
+                border-radius: 10px;
+                background: #fff;
+                box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+                transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+                padding: 10px;
+                cursor: pointer;
+            }
+            .card:hover{
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+            }
         </style>
     </head>
     <body>
@@ -114,6 +126,12 @@
                             <a href="https://www.youtube.com/channel/UCpSHZFRx64xWwXYbWbyXxfw"><img src="img/youtube_logo.png" width="50" height="50"></a>
                             <a href="https://www.linkedin.com/company/algokelvin"><img src="img/linkedln_logo.png" width="50" height="50"></a>
                         </div>
+                        <div class="col-lg-12">
+                            <p class="footer-text m-0">
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                Designed by <a href="http://localhost/Algokelvin/" target="_blank">AlgoKelvin</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 col-md-4">
@@ -128,7 +146,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
@@ -143,7 +161,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
     </body>
 </html>
