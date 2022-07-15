@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         .bg-cover {
-            background: url(img/bg_cover.png) center center fixed;
+            background: url(img/bg_cover.png); no-repeat
         }
         .bg-my-profile {
             background: url(img/bg_my_profile.png) no-repeat center fixed
@@ -16,24 +16,26 @@
             margin:auto;
             display: inline-block
         }
-        .img-profile {
-            display:block;
-            margin:auto;
-            max-width: 100%;
-            height: auto;
-        }
-        @media only screen and (max-width: 500px) {
-            .img-profile {
-                display:block;
-                margin:auto;
-                width: 200px;
-                height: 200px;
-            }
-        }
     </style>
 </head>
 <body>
-<section class="bg-cover">
+<div style="background: url(img/bg_cover.png) fixed; height:100%">
+    text coba
+    <div style="background: url(img/bg_my_profile.png) no-repeat center; height:100%; width: 750px; margin: auto">
+        hduwhduw
+    </div>
+    <!--<div class="bg-my-profile" style="height: 1000px; width: 600px; margin: auto">
+        &lt;!&ndash;<div style="background-color: rgb(196, 196, 196); margin-left: 10px; margin-right: 10px;">
+            <h2 style="text-align: center">Let Connect With Me</h2>
+        </div>&ndash;&gt;
+        &lt;!&ndash;<div style="margin: auto; background-color: rgb(196, 196, 196) width: 600px; height: 800px;">
+            &lt;!&ndash;<div style="text-align: center; background-color: rgb(255, 255, 255, 0.7);">
+                <h2>Let Connect With Me</h2>
+            </div>&ndash;&gt;
+        </div>&ndash;&gt;
+    </div>-->
+</div>
+<!--<section class="bg-cover">
     <div class="mx-4" style="height: 850px;">
         <div class="bg-my-profile" style="height: 100%; width: 100%;">
             <div style="margin-left: 450px; margin-right: 450px; background-color: rgb(196, 196, 196, 0.3)">
@@ -80,6 +82,6 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 </body>
 </html>
