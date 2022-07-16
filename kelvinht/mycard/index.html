@@ -16,13 +16,10 @@
             display: inline-block
         }
         .bg-profile2 {
-            background-image: url(img/bg_my_profile.png);
+            background: url(img/bg_my_profile.png) no-repeat center;
             height: 100%;
-            width: 50%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            margin: 0 auto:
+            width: 750px;
+            margin: auto;
         }
         .box-headline {
             background-color: rgb(196, 196, 196, 0.7);
@@ -68,7 +65,13 @@
         }
         @media screen and (max-width: 700px) {
             .bg-profile2 {
+                background-image: url(img/bg_my_profile.png);
+                height: 100%;
                 width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0 auto:
             }
             .txt-18 {
                 font-size: 16px;
