@@ -11,16 +11,6 @@
             height: 100%;
             margin: 0;
         }
-        .bg-profile {
-            background: url(img/bg_my_profile.png) no-repeat center;
-            height: 700px;
-            width: 525px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
         .bg-profile2 {
             background-image: url(img/bg_my_profile.png);
             height: 100%;
@@ -30,16 +20,74 @@
             background-size: cover;
             margin: 0 auto:
         }
+        .box-headline {
+            background-color: rgb(196, 196, 196, 0.7);
+            margin: 10px;
+            height: 600px;
+        }
+        .box-sub-headline {
+            text-align: center;
+            background-color: rgb(255, 255, 255, 0.6);
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 10px;
+            height: 300px;
+        }
+        .mt-10 {
+            margin-top: 10px;
+        }
+        .txt-small {
+            font-size: small;
+        }
+        .txt-18 {
+            font-size: 18px;
+        }
+        .txt-20 {
+            font-size: 20px;
+        }
+        .txt-24 {
+            font-size: 24px;
+        }
+        .font-Helvetica {
+            font-family: Helvetica;
+        }
+        .txt-center {
+            text-align: center;
+        }
+        .txt-medium {
+            font-size: medium;
+        }
         @media screen and (max-width: 700px) {
             .bg-profile2 {
                 width: 100%;
+            }
+            .txt-18 {
+                font-size: 16px;
+            }
+            .txt-20 {
+                font-size: 18px;
+            }
+            .txt-24 {
+                font-size: 22px;
             }
         }
     </style>
 </head>
 <body style="background: url(img/bg_cover.png)">
-<div class="bg-profile2">
-    fjuidjfd
+<div class="bg-profile2"><br>
+    <div class="box-headline"><br>
+        <div class="box-sub-headline">
+            <h2>Let Connect With Me</h2>
+            <p class="txt-20px font-Helvetica txt-center">
+                Bicara Tentang: <br>
+                <span class="txt-medium">Software Developer - Coding Language - Self Improvement - Content Creator</span> <br> <br>
+                <span class="txt-18;">
+                    <i>Jadikanlah kegagalan yang anda dapatkan sebagai bibit untuk membangun pondasi anda.</i> <br>
+                    <i>OPTIMIS adalah obat yang paling ampuh untuk memperkokoh pondasi mindset diri kita.</i> <br>
+                </span>
+            </p>
+        </div>
+    </div>
 </div>
 </body>
 </html>
