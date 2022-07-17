@@ -16,18 +16,16 @@
             display: inline-block
         }
         .bg-profile2 {
-            background-image: url(img/bg_my_profile.png);
-            height: 100%;
-            width: 50%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            margin: 0 auto:
+            background: url(img/bg_my_profile.png) no-repeat center;
+            height: 80%;
+            width: 600px;
+            margin: auto;
         }
         .box-headline {
             background-color: rgb(196, 196, 196, 0.7);
             margin: 10px;
             height: 500px;
+            border-radius: 25px;
         }
         .box-sub-headline {
             text-align: center;
@@ -36,6 +34,14 @@
             margin-right: 30px;
             margin-top: 10px;
             height: 300px;
+            border-radius: 25px;
+        }
+        .copyright-feature {
+            position: fixed;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
         }
         .mt-10 {
             margin-top: 10px;
@@ -68,7 +74,12 @@
         }
         @media screen and (max-width: 700px) {
             .bg-profile2 {
+                background-image: url(img/bg_my_profile.png);
+                height: 100%;
                 width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
             .txt-18 {
                 font-size: 16px;
@@ -117,6 +128,13 @@
                 </tr>
             </table>
         </div>
+    </div>
+    <div>
+        <p style="text-align: center; color: white">
+            Copyright © 2022 1.0<br>
+            Designed by AlgoKelvin <br>
+            Taken Photos by Leonardi Indrakama
+        </p>
     </div>
 </div>
 </body>
