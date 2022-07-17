@@ -1,0 +1,84 @@
+body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .layout-center {
+            margin:0 auto;
+            display: inline-block
+        }
+        .bg-profile2 {
+            background: url(img/bg_my_profile.png) no-repeat center;
+            height: 80%;
+            width: 600px;
+            margin: auto;
+        }
+        .box-headline {
+            background-color: rgb(196, 196, 196, 0.7);
+            margin: 10px;
+            height: 500px;
+            border-radius: 25px;
+        }
+        .box-sub-headline {
+            text-align: center;
+            background-color: rgb(255, 255, 255, 0.6);
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 10px;
+            height: 300px;
+            border-radius: 25px;
+        }
+        .copyright-feature {
+            position: fixed;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+        }
+        .mt-10 {
+            margin-top: 10px;
+        }
+        .txt-small {
+            font-size: small;
+        }
+        .txt-18 {
+            font-size: 18px;
+        }
+        .txt-20 {
+            font-size: 20px;
+        }
+        .txt-24 {
+            font-size: 24px;
+        }
+        .font-Helvetica {
+            font-family: Helvetica;
+        }
+        .txt-center {
+            text-align: center;
+        }
+        .txt-medium {
+            font-size: medium;
+        }
+        .img-center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        @media screen and (max-width: 700px) {
+            .bg-profile2 {
+                background-image: url(img/bg_my_profile.png);
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .txt-18 {
+                font-size: 16px;
+            }
+            .txt-20 {
+                font-size: 18px;
+            }
+            .txt-24 {
+                font-size: 22px;
+            }
+        }
