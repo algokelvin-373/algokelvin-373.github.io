@@ -27,9 +27,13 @@
             border-radius: 20px;
             text-align: center;
         }
-        .py-5-px {
+        .py-5px {
             padding-top: 5px;
             padding-bottom: 5px;
+        }
+        .my-3px {
+            margin-top: 3px;
+            margin-bottom: 3px;
         }
         .img-w-pct-100 {
             width: 100%;
@@ -37,11 +41,23 @@
         .img-h-pct-25 {
             height: 25%;
         }
+        .font-arial {
+            font-family: Arial;
+        }
+        .font-helvetica {
+            font-family: Helvetica;
+        }
         .font-verdana {
             font-family: Verdana;
         }
+        .txt-center {
+            text-align: center;
+        }
         .txt-30 {
             font-size: 30px;
+        }
+        .txt-18 {
+            font-size:18px;
         }
         .img-profile {
             max-width: 100%;
@@ -51,7 +67,15 @@
             .img-profile {
                 max-width: 80%;
                 height: 80%;
-                margin-top: 20px;
+                margin-top: 30px;
+            }
+            .py-5px {
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+            .my-3px {
+                margin-top: 1px;
+                margin-bottom: 1px;
             }
             .img-w-pct-100 {
                 width: 90%;
@@ -61,6 +85,9 @@
             }
             .txt-30 {
                 font-size: 16px;
+            }
+            .txt-18 {
+                font-size:12px;
             }
             .button-layout {
                 font-size: 18px;
@@ -92,12 +119,12 @@
                     <a class="nav-link" href="portfolio.html">Portfolio</a>
                 </li>
                 <li class="nav-item m-2 p-3">
-                    <a class="nav-link" href="cv/index.html">About</a>
+                    <a class="nav-link" href="https://algokelvin-373.github.io/kelvinht/cv">About</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="px-5 py-3 mx-4 my-3">
+    <div class="px-5 py-5px mx-4 my-3px">
         <div class="row">
             <div class="col-sm-7">
                 <img src="img/my_name.svg" class="img-w-pct-100 img-h-pct-25">
@@ -118,8 +145,8 @@
         </div>
     </div>
     <section class="py-4" style="background-color: #FFE9C8">
-        <p style="font-size:30px; font-family: Arial; text-align: center;"><b>About Me</b></p>
-        <p class="mx-4" style="font-size:18px; font-family: Helvetica; text-align: center;">
+        <p class="txt-30 font-arial txt-center"><b>About Me</b></p>
+        <p class="mx-4 txt-18 font-helvetica txt-center">
             Kelvin Herwanda Tandrio is Software Developer especially Android Device. <br>
             I have a content name is "AlgoKelvin" and this channel talks the Technology, Learning to Coding,
             and Making Software. I'm active to make content and make some projects on many case studies. <br>
@@ -134,10 +161,10 @@
         <div class="mx-4">
             <div class="row">
                 <div class="col-sm-5">
-                    <img src="img/my_img_profile_2.png" style="display:block; margin:auto; max-width: 100%; height: auto;">
+                    <img src="https://raw.githubusercontent.com/algokelvin-373/algokelvin-373.github.io/master/kelvinht/mycard/img/bg_my_profile.png" style="display:block; margin:auto; max-width: 100%; height: auto;">
                 </div>
                 <div class="col-sm-7">
-                    <p style="font-size:4vw; font-family: Arial; text-align: start;">
+                    <p style="font-size:50px; font-family: Arial; text-align: start;">
                         <b>Let Connect With Me</b>
                     </p>
                     <p class="py-2" style="font-size:35px; font-family: Helvetica; text-align: start;">
@@ -175,7 +202,57 @@
     </section>
     <section class="py-4" style="background-color: #16F3F3">
         <p style="font-size:30px; font-family: Arial; text-align: center;"><b>Check My Blogger</b></p>
-        <div class="d-flex justify-content-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="p-2 bd-highlight">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="img/img_content_creator.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">CONTENT CREATOR</h4>
+                                <p class="card-text">
+                                    Topik ini membahas tentang bagaimana menjadi Content Creator yang terus update dengan
+                                    berbagai ide. Untuk platformnya, lebih fokus ke Linkedln. Untuk media lain seperti
+                                    Instagram dan Yooutube, masih di hold dulu.
+                                </p>
+                                <a href="#" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-2 bd-highlight">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="img/img_software_developer.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">SOFTWARE DEVELOPER</h4>
+                                <p class="card-text">
+                                    Topik ini lebih membahas pengetauhan dan perkembangan berbagai Software. Ada juga
+                                    contoh pembuatan program aplikasi + live coding.
+                                </p>
+                                <a href="#" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-2 bd-highlight">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="img/img_coding_language.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">CODING LANGUAGE</h4>
+                                <p class="card-text">
+                                    Topik ini membahas tentang coding secara basic (fundamental). Selain itu juga ada
+                                    mindset dan mental yang harus siap dalam belajar. Ada contoh studi kasus + live coding
+                                </p>
+                                <a href="#" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="d-flex justify-content-center">
             <div class="p-2 bd-highlight">
                 <div class="card" style="width:400px">
                     <img class="card-img-top" src="img/img_self_improvement.png" alt="Card image" style="width:100%">
@@ -212,7 +289,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </section>
 </section>
 </body>
