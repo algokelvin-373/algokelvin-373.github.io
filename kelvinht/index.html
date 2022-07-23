@@ -27,6 +27,49 @@
             border-radius: 20px;
             text-align: center;
         }
+        .py-5-px {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .img-w-pct-100 {
+            width: 100%;
+        }
+        .img-h-pct-25 {
+            height: 25%;
+        }
+        .font-verdana {
+            font-family: Verdana;
+        }
+        .txt-30 {
+            font-size: 30px;
+        }
+        .img-profile {
+            max-width: 100%;
+            height: auto;
+        }
+        @media only screen and (max-width: 500px) {
+            .img-profile {
+                max-width: 80%;
+                height: 80%;
+                margin-top: 20px;
+            }
+            .img-w-pct-100 {
+                width: 90%;
+            }
+            .img-h-pct-25 {
+                height: 20%;
+            }
+            .txt-30 {
+                font-size: 16px;
+            }
+            .button-layout {
+                font-size: 18px;
+                margin: 3px;
+                padding: 3px;
+                width: 100px;
+                border-radius: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -57,19 +100,19 @@
     <div class="px-5 py-3 mx-4 my-3">
         <div class="row">
             <div class="col-sm-7">
-                <img src="img/my_name.svg" width="100%" height="25%">
-                <p style="font-size:2vw; font-family: Verdana;">
-                    💻Mobile Application Developer📱 <br>
+                <img src="img/my_name.svg" class="img-w-pct-100 img-h-pct-25">
+                <p class="txt-30 font-verdana">
+                    Mobile Application Developer<br>
                     Android/iOS/Web Developer <br>
                     Owner of AlgoKelvin & Olshop.vin <br>
                     Content Self Improvement & Software Developer <br>
-                    Content Creator of Instagram & Youtube <br>
+                    Content Creator <br>
                 </p>
                 <p class="button-layout">Read More</p>
             </div>
             <div class="col-sm-5">
                 <div class="center-layout">
-                    <img src="img/my_img_profile.png" style="max-width: 100%; height: auto;">
+                    <img src="img/my_img_profile.png" class="img-profile">
                 </div>
             </div>
         </div>
@@ -177,7 +220,7 @@
     <div class="container-fluid text-black py-3" style="background-color: #72BBFF">
         <p style="text-align: center">
             Copyright © 2022 Version 1.0.0 <br>
-            Designed by Kelvin Herwanda Tandrio
+            Designed by AlgoKelvin
         </p>
     </div>
 </footer>
