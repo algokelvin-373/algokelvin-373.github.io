@@ -31,9 +31,15 @@
             padding-top: 5px;
             padding-bottom: 5px;
         }
+        .p-3px {
+            padding: 3px;
+        }
         .my-3px {
             margin-top: 3px;
             margin-bottom: 3px;
+        }
+        .m-2px {
+            margin: 2px;
         }
         .img-w-pct-100 {
             width: 100%;
@@ -50,8 +56,17 @@
         .font-verdana {
             font-family: Verdana;
         }
+        .txt-start {
+            text-align: start;
+        }
         .txt-center {
             text-align: center;
+        }
+        .txt-50 {
+            font-size: 50px;
+        }
+        .txt-35 {
+            font-size: 35px;
         }
         .txt-30 {
             font-size: 30px;
@@ -63,7 +78,24 @@
             max-width: 100%;
             height: auto;
         }
+        .img-card {
+            display:block;
+            margin:auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .img-icon {
+            width:100;
+            height:100;
+            display:block;
+            margin:auto;
+        }
         @media only screen and (max-width: 500px) {
+            .img-icon {
+                width:50;
+                height:50;
+            }
             .img-profile {
                 max-width: 80%;
                 height: 80%;
@@ -82,6 +114,12 @@
             }
             .img-h-pct-25 {
                 height: 20%;
+            }
+            .txt-50 {
+                font-size: 30px;
+            }
+            .txt-35 {
+                font-size: 25px;
             }
             .txt-30 {
                 font-size: 16px;
@@ -161,38 +199,39 @@
         <div class="mx-4">
             <div class="row">
                 <div class="col-sm-5">
-                    <img src="https://raw.githubusercontent.com/algokelvin-373/algokelvin-373.github.io/master/kelvinht/mycard/img/bg_my_profile.png" style="display:block; margin:auto; max-width: 100%; height: auto;">
+                    <img src="https://raw.githubusercontent.com/algokelvin-373/algokelvin-373.github.io/master/kelvinht/mycard/img/bg_my_profile.png"
+                         class="img-card">
                 </div>
                 <div class="col-sm-7">
-                    <p style="font-size:50px; font-family: Arial; text-align: start;">
+                    <p class="txt-50 font-arial txt-start">
                         <b>Let Connect With Me</b>
                     </p>
-                    <p class="py-2" style="font-size:35px; font-family: Helvetica; text-align: start;">
+                    <p class="py-2 txt-35 font-helvetica txt-start">
                         <i>Bicara Tentang: Software Developer - Coding Language - Self Improvement - Content Creator</i>
                     </p>
-                    <p class="py-2" style="font-size:30px; font-family: Helvetica; text-align: start;">
+                    <p class="py-2 txt-30 font-helvetica txt-start">
                         <i>Jadikanlah kegagalan yang anda dapatkan sebagai bibit untuk membangun pondasi anda.</i> <br>
                         <i>OPTIMIS adalah obat yang paling ampuh untuk memperkokoh pondasi mindset diri kita.</i> <br>
                     </p>
                     <div class="row">
                         <ul class="nav">
-                            <li class="nav-item m-2 p-3">
+                            <li class="nav-item m-2px p-3px">
                                 <a href="https://www.linkedin.com/in/kelvin-herwanda-tandrio">
-                                    <img src="img/linkedln_logo.svg" width="100" height="100" style="display:block; margin:auto;">
+                                    <img src="img/linkedln_logo.svg" class="img-icon">
                                 </a>
                             </li>
-                            <li class="nav-item m-2 p-3">
+                            <li class="nav-item m-2px p-3px">
                                 <a href="https://www.instagram.com/kelvin_373">
-                                    <img src="img/ig_logo.svg" width="100" height="100" style="display:block; margin:auto;">
+                                    <img src="img/ig_logo.svg" class="img-icon">
                                 </a>
                             </li>
-                            <li class="nav-item m-2 p-3">
+                            <li class="nav-item m-2px p-3px">
                                 <a href="https://www.tiktok.com/@kelvinht373">
-                                    <img src="img/tiktok_logo.svg" width="100" height="100" style="display:block; margin:auto;">
+                                    <img src="img/tiktok_logo.svg" class="img-icon">
                                 </a>
                             </li>
-                            <li class="nav-item m-2 p-3">
-                                <a href="#"><img src="img/wa_logo.svg" width="100" height="100" style="display:block; margin:auto;"></a>
+                            <li class="nav-item m-2px p-3px">
+                                <a href="#"><img src="img/wa_logo.svg" class="img-icon"></a>
                             </li>
                         </ul>
                     </div>
@@ -212,8 +251,7 @@
                                 <h4 class="card-title">CONTENT CREATOR</h4>
                                 <p class="card-text">
                                     Topik ini membahas tentang bagaimana menjadi Content Creator yang terus update dengan
-                                    berbagai ide. Untuk platformnya, lebih fokus ke Linkedln. Untuk media lain seperti
-                                    Instagram dan Yooutube, masih di hold dulu.
+                                    berbagai ide. Untuk platformnya, lebih fokus ke Linkedln.
                                 </p>
                                 <a href="#" class="btn btn-primary">View More</a>
                             </div>
@@ -228,7 +266,7 @@
                                 <h4 class="card-title">SOFTWARE DEVELOPER</h4>
                                 <p class="card-text">
                                     Topik ini lebih membahas pengetauhan dan perkembangan berbagai Software. Ada juga
-                                    contoh pembuatan program aplikasi + live coding.
+                                    contoh pembuatan program aplikasi di berbagai platform (Web/Android/iOS). Ada juga live coding.
                                 </p>
                                 <a href="#" class="btn btn-primary">View More</a>
                             </div>
@@ -251,45 +289,55 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="p-2 bd-highlight">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="img/img_self_improvement.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">SELF IMPROVEMENT</h4>
+                                <p class="card-text">
+                                    Topik ini membahas tentang ilmu pengembangan diri. Ilmu ini bisa menjadi bahan untuk
+                                    menambah pengalaman, relasi, dan bisa memperbaiki 2M + S (Mindset, Mental, dan Spiritual)
+                                </p>
+                                <a href="#" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-2 bd-highlight">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="img/img_software_developer.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">MY LIFESTYLES</h4>
+                                <p class="card-text">
+                                    This is about my lifestyles. You can enjoy my profile. You can get more inspirations
+                                    from my channels. Don't worry. I'm open to connect. You can follow my instagram.
+                                </p>
+                                <a href="#" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-2 bd-highlight">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="img/img_coding_language.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">NETWORKING</h4>
+                                <p class="card-text">
+                                    Topik ini lebih ke arah kegiatan networking. Kegiatan adalah sebuah gambaran di lingkungan
+                                    jaringan yang saling berbagi ilmu dan pengalaman. Saya bercerita sedikit saja tentang ilmu ini.
+                                </p>
+                                <a href="#" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--<div class="d-flex justify-content-center">
-            <div class="p-2 bd-highlight">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img/img_self_improvement.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">SELF IMPROVEMENT</h4>
-                        <p class="card-text">
-                            Test
-                        </p>
-                        <a href="#" class="btn btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="p-2 bd-highlight">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img/img_software_algokelvin.png" alt="Card image" style="width:100%;">
-                    <div class="card-body">
-                        <h4 class="card-title">SOFTWARE DEVELOPER</h4>
-                        <p class="card-text">
-                            Test
-                        </p>
-                        <a href="#" class="btn btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="p-2 bd-highlight">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img/img_self_improvement.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">MY LIFESTYLE</h4>
-                        <p class="card-text">
-                            Test
-                        </p>
-                        <a href="#" class="btn btn-primary">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>-->
+        <a href="#"><div><p class="button-layout" style="margin: 0 auto;">Read More</p></div></a>
     </section>
 </section>
 </body>
