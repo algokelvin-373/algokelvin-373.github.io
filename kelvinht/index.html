@@ -5,143 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .bg-cover {
-            background-image: url("img/bg_cover.png");
-        }
-        .logo-profile {
-            max-width: 400px;
-            height: 100px;
-        }
-        .center-layout {
-            margin: auto;
-            padding: 10px;
-        }
-        .button-layout {
-            font-size: 30px;
-            font-family: Tahoma;
-            margin: 5px;
-            padding: 5px;
-            background: #FFB9B9;
-            width: 200px;
-            border-radius: 20px;
-            text-align: center;
-        }
-        .py-5px {
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-        .p-3px {
-            padding: 3px;
-        }
-        .my-3px {
-            margin-top: 3px;
-            margin-bottom: 3px;
-        }
-        .m-2px {
-            margin: 2px;
-        }
-        .img-w-pct-100 {
-            width: 100%;
-        }
-        .img-h-pct-25 {
-            height: 25%;
-        }
-        .font-arial {
-            font-family: Arial;
-        }
-        .font-helvetica {
-            font-family: Helvetica;
-        }
-        .font-verdana {
-            font-family: Verdana;
-        }
-        .txt-start {
-            text-align: start;
-        }
-        .txt-center {
-            text-align: center;
-        }
-        .txt-50 {
-            font-size: 50px;
-        }
-        .txt-35 {
-            font-size: 35px;
-        }
-        .txt-30 {
-            font-size: 30px;
-        }
-        .txt-18 {
-            font-size:18px;
-        }
-        .img-profile {
-            max-width: 100%;
-            height: auto;
-        }
-        .img-card {
-            display:block;
-            margin:auto;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .img-icon {
-            width:100;
-            height:100;
-            display:block;
-            margin:auto;
-        }
-        @media only screen and (max-width: 500px) {
-            .img-icon {
-                width:50;
-                height:50;
-            }
-            .img-profile {
-                max-width: 80%;
-                height: 80%;
-                margin-top: 30px;
-            }
-            .py-5px {
-                padding-top: 3px;
-                padding-bottom: 3px;
-            }
-            .my-3px {
-                margin-top: 1px;
-                margin-bottom: 1px;
-            }
-            .img-w-pct-100 {
-                width: 90%;
-            }
-            .img-h-pct-25 {
-                height: 20%;
-            }
-            .txt-50 {
-                font-size: 30px;
-            }
-            .txt-35 {
-                font-size: 25px;
-            }
-            .txt-30 {
-                font-size: 16px;
-            }
-            .txt-18 {
-                font-size:12px;
-            }
-            .button-layout {
-                font-size: 18px;
-                margin: 3px;
-                padding: 3px;
-                width: 100px;
-                border-radius: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <section class="bg-cover">
     <nav class="navbar navbar-expand-sm px-5 py-3">
         <div class="container-fluid m-2 p-3">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="img/my_personal_web.svg" width="160" height="20"><br>
             </a>
         </div>
@@ -196,44 +66,24 @@
         </p>
     </section>
     <section class="py-4" style="background-color: #E2FFD0">
-        <div class="mx-4">
-            <div class="row">
-                <div class="col-sm-5">
-                    <img src="https://raw.githubusercontent.com/algokelvin-373/algokelvin-373.github.io/master/kelvinht/mycard/img/bg_my_profile.png"
-                         class="img-card">
-                </div>
-                <div class="col-sm-7">
-                    <p class="txt-50 font-arial txt-start">
-                        <b>Let Connect With Me</b>
-                    </p>
-                    <p class="py-2 txt-35 font-helvetica txt-start">
-                        <i>Bicara Tentang: Software Developer - Coding Language - Self Improvement - Content Creator</i>
-                    </p>
-                    <p class="py-2 txt-30 font-helvetica txt-start">
-                        <i>Jadikanlah kegagalan yang anda dapatkan sebagai bibit untuk membangun pondasi anda.</i> <br>
-                        <i>OPTIMIS adalah obat yang paling ampuh untuk memperkokoh pondasi mindset diri kita.</i> <br>
-                    </p>
-                    <div class="row">
-                        <ul class="nav">
-                            <li class="nav-item m-2px p-3px">
-                                <a href="https://www.linkedin.com/in/kelvin-herwanda-tandrio">
-                                    <img src="img/linkedln_logo.svg" class="img-icon">
-                                </a>
-                            </li>
-                            <li class="nav-item m-2px p-3px">
-                                <a href="https://www.instagram.com/kelvin_373">
-                                    <img src="img/ig_logo.svg" class="img-icon">
-                                </a>
-                            </li>
-                            <li class="nav-item m-2px p-3px">
-                                <a href="https://www.tiktok.com/@kelvinht373">
-                                    <img src="img/tiktok_logo.svg" class="img-icon">
-                                </a>
-                            </li>
-                            <li class="nav-item m-2px p-3px">
-                                <a href="#"><img src="img/wa_logo.svg" class="img-icon"></a>
-                            </li>
-                        </ul>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <img src="https://raw.githubusercontent.com/algokelvin-373/algokelvin-373.github.io/master/kelvinht/mycard/img/bg_my_profile.png"
+                             class="img-card">
+                    </div>
+                    <div class="col-sm-7">
+                        <p class="txt-50 font-arial txt-start">
+                            <b>Let Connect With Me</b>
+                        </p>
+                        <p class="py-2 txt-35 font-helvetica txt-start">
+                            <i>Bicara Tentang: Software Developer - Coding Language - Self Improvement - Content Creator</i>
+                        </p>
+                        <p class="py-2 txt-30 font-helvetica txt-start">
+                            <i>Jadikanlah kegagalan yang anda dapatkan sebagai bibit untuk membangun pondasi anda.</i> <br> <br>
+                            <i>OPTIMIS adalah obat yang paling ampuh untuk memperkokoh pondasi mindset diri kita.</i> <br>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -337,16 +187,41 @@
                 </div>
             </div>
         </div>
-        <a href="#"><div><p class="button-layout" style="margin: 0 auto;">Read More</p></div></a>
+        <a href="blog.html"><div><p class="button-layout" style="margin: 0 auto;">Read More</p></div></a>
     </section>
 </section>
 </body>
 <footer>
-    <div class="container-fluid text-black py-3" style="background-color: #72BBFF">
-        <p style="text-align: center">
-            Copyright © 2022 Version 1.0.0 <br>
-            Designed by AlgoKelvin
-        </p>
+    <div class="container-fluid text-black py-5" style="background-color: #72BBFF">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>Copyright © 2022 Version 1.0.0 | Designed by AlgoKelvin</p>
+                </div>
+                <div class="col-sm-7">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item m-2px p-3px">
+                            <a href="https://www.linkedin.com/in/kelvin-herwanda-tandrio">
+                                <img src="img/linkedln_logo.svg" class="img-icon">
+                            </a>
+                        </li>
+                        <li class="nav-item m-2px p-3px">
+                            <a href="https://www.instagram.com/kelvin_373">
+                                <img src="img/ig_logo.svg" class="img-icon">
+                            </a>
+                        </li>
+                        <li class="nav-item m-2px p-3px">
+                            <a href="https://www.tiktok.com/@kelvinht373">
+                                <img src="img/tiktok_logo.svg" class="img-icon">
+                            </a>
+                        </li>
+                        <li class="nav-item m-2px p-3px">
+                            <a href="#"><img src="img/wa_logo.svg" class="img-icon"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 </html>
