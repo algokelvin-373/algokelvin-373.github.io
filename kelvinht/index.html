@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script>
         $(function(){
+            $("#header").load("header.html");
+            $("#headerme").load("blog/headerme.html");
             $("#aboutme").load("blog/aboutme.html");
             $("#connectme").load("blog/connectme.html");
             $("#blogme").load("blog/blogme.html");
@@ -18,53 +20,8 @@
 </head>
 <body>
 <section class="bg-cover">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="container-fluid m-4 p-3">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="img/my_personal_web.svg" width="160" height="20"><br>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <ul class="nav justify-content-end">
-                    <li class="nav-item m-2 p-3">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item m-2 p-3">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item m-2 p-3">
-                        <a class="nav-link" href="portfolio.html">Portfolio</a>
-                    </li>
-                    <li class="nav-item m-2 p-3">
-                        <a class="nav-link" href="https://algokelvin-373.github.io/kelvinht/cv">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="px-5 py-5px mx-4 my-3px">
-        <div class="row">
-            <div class="col-sm-7">
-                <img src="img/my_name.svg" class="img-w-pct-100 img-h-pct-25">
-                <p class="txt-30 font-verdana">
-                    Mobile Application Developer<br>
-                    Android/iOS/Web Developer <br>
-                    Owner of AlgoKelvin & Olshop.vin <br>
-                    Content Self Improvement & Software Developer <br>
-                    Content Creator <br>
-                </p>
-                <p class="button-layout">Read More</p>
-            </div>
-            <div class="col-sm-5">
-                <div class="center-layout">
-                    <img src="img/my_img_profile.png" class="img-profile">
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="header"></div>
+    <div id="headerme"></div>
     <div id="aboutme"></div>
     <div id="connectme"></div>
     <div id="blogme"></div>
