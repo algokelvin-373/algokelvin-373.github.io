@@ -9,39 +9,14 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script>
         $(function(){
+          $("#header").load("header.html");
           $("#footer").load("footer.html");
         });
    </script>
 </head>
 <body>
 <section class="bg-cover">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="container-fluid m-4 p-3">
-          <a class="navbar-brand" href="index.html">
-            <img src="img/my_personal_web.svg" width="160" height="20"><br>
-          </a>
-        </div>
-      </div>
-      <div class="col-sm-8">
-        <ul class="nav justify-content-end">
-          <li class="nav-item m-2 p-3">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item m-2 p-3">
-            <a class="nav-link" href="blog.html">Blog</a>
-          </li>
-          <li class="nav-item m-2 p-3">
-            <a class="nav-link" href="portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item m-2 p-3">
-            <a class="nav-link" href="https://algokelvin-373.github.io/kelvinht/cv">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <div id="header"></div>
   <div id="demo" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
