@@ -4,16 +4,25 @@ function all_blogger() {
 const blog = [
 "Coding Language",
 "Content Creator",
-"Software Developer"
+"Software Developer",
+"Self Improvement",
+"Networking",
+"My Lifestyle"
 ];
 
 const imgblog = [
+"img/img_coding_language.png",
+"img/img_content_creator.png",
+"img/img_software_developer.png",
 "img/img_coding_language.png",
 "img/img_content_creator.png",
 "img/img_software_developer.png"
 ];
 
 const decblog = [
+"Topik ini membahas tentang bagaimana menjadi Content Creator yang terus update dengan berbagai ide. Untuk platformnya, lebih fokus ke Linkedln.",
+"Topik ini lebih membahas pengetauhan dan perkembangan berbagai Software. Ada juga contoh pembuatan program aplikasi di berbagai platform (Web/Android/iOS). Ada juga live coding.",
+"Topik ini membahas tentang coding secara basic (fundamental). Selain itu juga ada mindset dan mental yang harus siap dalam belajar. Ada contoh studi kasus + live coding",
 "Topik ini membahas tentang bagaimana menjadi Content Creator yang terus update dengan berbagai ide. Untuk platformnya, lebih fokus ke Linkedln.",
 "Topik ini lebih membahas pengetauhan dan perkembangan berbagai Software. Ada juga contoh pembuatan program aplikasi di berbagai platform (Web/Android/iOS). Ada juga live coding.",
 "Topik ini membahas tentang coding secara basic (fundamental). Selain itu juga ada mindset dan mental yang harus siap dalam belajar. Ada contoh studi kasus + live coding"
