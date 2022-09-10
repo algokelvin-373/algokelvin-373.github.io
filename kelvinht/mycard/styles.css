@@ -1,5 +1,5 @@
 body, html {height: 100%; margin: 0;}
-p, span {font-family: Georgia;}
+p, span {font-family: Georgia; font-size: 15px; }
 .layout-center {margin:0 auto;display: inline-block}
         .bg-profile {
             background: url(img/bg_my_profile.png) no-repeat center;
@@ -11,7 +11,7 @@ p, span {font-family: Georgia;}
         .box-headline {
             background-color: rgb(196, 196, 196, 0.7);
             margin: 10px;
-            height: 325px;
+            height: 350px;
             border-radius: 25px;
             transform: translateY(5%);
         }
@@ -20,7 +20,7 @@ p, span {font-family: Georgia;}
             background-color: rgb(255, 255, 255, 0.6);
             margin-left: 20px;
             margin-right: 20px;
-            height: 250px;
+            height: 275px;
             border-radius: 25px;
             transform: translateY(5%);
         }
