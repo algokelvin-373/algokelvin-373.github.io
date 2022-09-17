@@ -2,7 +2,6 @@ body, html {height: 100%; margin: 0;}
 p, span {font-family: Georgia; font-size: 15px; }
 .layout-center {margin:0 auto;display: inline-block}
         .bg-profile {
-            background: url(img/bg_my_profile.png) no-repeat center;
             height: 500px;
             width: 375px;
             margin: auto;
