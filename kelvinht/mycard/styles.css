@@ -37,31 +37,19 @@ p, span {font-family: Georgia; font-size: 15px; }
         .txt-small {
             font-size: small;
         }
-        .txt-18 {
-            font-size: 18px;
-        }
-        .txt-20 {
-            font-size: 20px;
-        }
-        .txt-24 {
-            font-size: 24px;
-        }
-        .font-Helvetica {
-            font-family: Helvetica;
-        }
-        .txt-center {
-            text-align: center;
-        }
-        .txt-medium {
-            font-size: medium;
-        }
+        .txt-18 {font-size: 18px;}
+        .txt-20 {font-size: 20px;}
+        .txt-24 {font-size: 24px;}
+        .font-Helvetica {font-family: Helvetica;}
+        .txt-center {text-align: center;}
+        .txt-medium {font-size: medium;}
         .img-center {
           display: block;
           margin-left: auto;
           margin-right: auto;
         }
-        @media screen and (max-width: 700px) {
-            .bg-profile {
+@media screen and (max-width: 700px) {
+    .bg-profile {
                 background-image: url(img/bg_my_profile.png);
                 height: 100%;
                 width: 100%;
@@ -69,14 +57,8 @@ p, span {font-family: Georgia; font-size: 15px; }
                 background-repeat: no-repeat;
                 background-size: cover;
                 transform: translateY(0%);
-            }
-            .txt-18 {
-                font-size: 16px;
-            }
-            .txt-20 {
-                font-size: 18px;
-            }
-            .txt-24 {
-                font-size: 22px;
-            }
-        }
+    }
+    .txt-18 {font-size: 16px;}
+    .txt-20 {font-size: 18px;}
+    .txt-24 {font-size: 22px;}
+}
