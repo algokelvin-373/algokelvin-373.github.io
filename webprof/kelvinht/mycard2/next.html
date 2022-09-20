@@ -16,7 +16,20 @@
         const urlParams = new URLSearchParams(window.location.search);
         const greetingValue = urlParams.get('greeting');
         document.getElementById("here").innerHTML = greetingValue;
-        console.log(greetingValue);  
+        console.log(greetingValue);
+
+        var name = localStorage.getItem("firstname");
+        localStorage.removeItem('firstname')
+        console.log(name)
+
+        // var myData = localStorage['data_name'];
+        // localStorage.removeItem( 'data_name' ); // Clear the localStorage
+
+        // //JSON Parse
+        // console.log(myData)
+        // // var json = JSON.parse(myData);
+        // // console.log(json['name'])
+        // // console.log(json['headline'])
     </script>
  
  </body>
