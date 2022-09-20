@@ -12,15 +12,41 @@
         </tr>
     </table>
 
+    Your Name
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>:</td>
+            <td id="name">....</td>
+        </tr>
+        <tr>
+            <td>Headline</td>
+            <td>:</td>
+            <td id="headline">....</td>
+        </tr>
+    </table>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const greetingValue = urlParams.get('greeting');
         document.getElementById("here").innerHTML = greetingValue;
         console.log(greetingValue);
 
-        var name = localStorage.getItem("firstname");
-        localStorage.removeItem('firstname')
+        var name = localStorage.getItem('data_name');
+        var headline= localStorage.getItem('data_headline');
+
+        localStorage.removeItem('data_name');
+        localStorage.removeItem('data_headline');
+
         console.log(name)
+        console.log(headline)
+
+        document.getElementById("name").innerHTML = name;
+        document.getElementById("headline").innerHTML = headline;
+
+        var name2 = localStorage.getItem("firstname");
+        localStorage.removeItem('firstname')
+        console.log(name2)
 
         // var myData = localStorage['data_name'];
         // localStorage.removeItem( 'data_name' ); // Clear the localStorage

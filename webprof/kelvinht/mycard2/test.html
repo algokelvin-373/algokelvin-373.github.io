@@ -6,14 +6,18 @@
 </head>
 <body>
 
-    <a href="next.html?greeting=hello">go to second page</a>
+    <!-- <a href="next.html?greeting=hello">go to second page</a> -->
 
-    
+    <form name="form1" action="next.html" method="get">
+        name: <input type ="text" id="name"> <br>
+        headline: <input type ="text" id="headline"> <br>
+        <button type="submit" onClick="testJS()" value="next"> Next </button>
+    </form>
 
 <!-- <form name="form1" action="next.html" method="get">
-    name:<input type ="text" id="name" name="n">
+    
     <input type="submit" value="next">
-    <button type="submit" id="print" onClick="testJS()" value="next"> Next </button>
+    
 </form> -->
 
 <script>
@@ -23,6 +27,15 @@
     // };
     // var myData = firstData;
     // localStorage.setItem('data_name', myData)
+
+    function testJS() {
+
+        var name = document.getElementById('name').value;
+        var headline = document.getElementById('headline').value;
+
+        localStorage.setItem("data_name", name)
+        localStorage.setItem("data_headline", headline)
+    }
 
     localStorage.setItem("firstname", "Smith");
 
