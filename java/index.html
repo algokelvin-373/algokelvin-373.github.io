@@ -2,10 +2,30 @@
     <title>Java Tutorial</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="css/algokelvin.styles.css"> -->
-    <link rel="stylesheet" href="css/algo.styles.css">
     <script src="js/js-algokelvin-java.js"></script>
     <style>
+        .card-item {
+            background-image: url('img/bg_java_item.png'); 
+            background-size: cover;
+            height: 300px;
+        }
+
+        .page-java {
+            background-color: aliceblue;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .page-tutorial {
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 2px;
+            border-color: #14ff14;
+            width: 95%;
+            margin: 0 auto;
+        }
+        td {
+            padding: 16px;
+        }
         .txt-30 {
             font-size: 30px;
         }
@@ -19,6 +39,20 @@
             padding-bottom: 8px;
             padding-top: 8px;
         }
+        .col-30 {
+            width: 30%;
+            padding: 8px;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 2px;
+            border-color: #a4593d;
+        }
+        .row {
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 2px;
+            border-color: #8f8ff5;
+        }
     </style>
     <body style="background-color: #bfbfff;">
         <div class="page-java">
@@ -31,76 +65,40 @@
             </p>
             <div class="page-tutorial">
                 <div style="margin: 0 auto; width: 90%;">
-                    <table align="center">
-                        <tr>
-                            <td>
-                                <div class="card-item">
-                                    <p align="center">
-                                        <a class="txt-30">Java Fundamental</a> <br>
-                                        <a class="txt-20">Chapter 1: Input Output</a> <br>
-                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                        <a class="txt-16 ptb-8">This is my start to create video live coding Java Developer. The first is Input Output</a> <br>
-                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986947967387672576">
-                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                        <a href="">
-                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                    </p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card-item">
-                                    <p align="center">
-                                        <a class="txt-30">Java Fundamental</a> <br>
-                                        <a class="txt-20">Chapter 2: Decision Program</a> <br>
-                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                        <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
-                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985170096281305088">
-                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                        <a href="">
-                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="card-item">
-                                    <p align="center">
-                                        <a class="txt-30">Java Fundamental</a> <br>
-                                        <a class="txt-20">Chapter 1: Input Output</a> <br>
-                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                        <a class="txt-16 ptb-8">This is my start to create video live coding Java Developer. The first is Input Output</a> <br>
-                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986947967387672576">
-                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                        <a href="">
-                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                    </p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="card-item">
-                                    <p align="center">
-                                        <a class="txt-30">Java Fundamental</a> <br>
-                                        <a class="txt-20">Chapter 2: Decision Program</a> <br>
-                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                        <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
-                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985170096281305088">
-                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                        <a href="">
-                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                        </a>
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="row">
+                        <div class="col-30">
+                            <div class="card-item">
+                                <p align="center">
+                                    <a class="txt-30">Java Fundamental</a> <br>
+                                    <a class="txt-20">Chapter 1: Input Output</a> <br>
+                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                    <a class="txt-16 ptb-8">This is my start to create video live coding Java Developer. The first is Input Output</a> <br>
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986947967387672576">
+                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                    </a>
+                                    <a href="">
+                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-30">
+                            <div class="card-item">
+                                <p align="center">
+                                    <a class="txt-30">Java Fundamental</a> <br>
+                                    <a class="txt-20">Chapter 2: Decision Program</a> <br>
+                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                    <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985170096281305088">
+                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                    </a>
+                                    <a href="">
+                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
