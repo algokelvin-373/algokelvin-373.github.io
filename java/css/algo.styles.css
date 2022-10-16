@@ -1,0 +1,23 @@
+.card-item {
+    background-image: url('img/card_java.png'); 
+    background-size: cover; 
+    width: 300px; 
+    height: 300px;
+}
+
+.page-java {
+    background-color: aliceblue;
+    width: 90%;
+    margin: 0 auto;
+}
+.page-tutorial {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #14ff14;
+    width: 95%;
+    margin: 0 auto;
+}
+td {
+    padding: 16px;
+}
