@@ -16,10 +16,6 @@
             margin: 0 auto;
         }
         .page-tutorial {
-            border-style: solid;
-            border-radius: 10px;
-            border-width: 2px;
-            border-color: #14ff14;
             width: 95%;
             margin: 0 auto;
         }
@@ -39,19 +35,30 @@
             padding-bottom: 8px;
             padding-top: 8px;
         }
-        .col-30 {
-            width: 30%;
-            padding: 8px;
-            border-style: solid;
-            border-radius: 10px;
-            border-width: 2px;
-            border-color: #a4593d;
+        [class*="col-"] {
+            float: left;
+            position: relative;
+            padding: 16px;
         }
-        .row {
-            border-style: solid;
-            border-radius: 10px;
-            border-width: 2px;
-            border-color: #8f8ff5;
+        .col-3 {
+            width: 30%;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        @media only screen and (max-width: 1300px) {
+            .col-3 { width: 25%; }
+            [class*="col-"] {
+                padding: 12px;
+            }
+        }
+        @media only screen and (max-width: 1000px) {
+            .col-3 { width: 100%; }
+            [class*="col-"] {
+                padding: 8px;
+            }
         }
     </style>
     <body style="background-color: #bfbfff;">
@@ -66,7 +73,7 @@
             <div class="page-tutorial">
                 <div style="margin: 0 auto; width: 90%;">
                     <div class="row">
-                        <div class="col-30">
+                        <div class="col-3">
                             <div class="card-item">
                                 <p align="center">
                                     <a class="txt-30">Java Fundamental</a> <br>
@@ -82,7 +89,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-30">
+                        <div class="col-3">
                             <div class="card-item">
                                 <p align="center">
                                     <a class="txt-30">Java Fundamental</a> <br>
@@ -90,6 +97,22 @@
                                     <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
                                     <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
                                     <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985170096281305088">
+                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                    </a>
+                                    <a href="">
+                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card-item">
+                                <p align="center">
+                                    <a class="txt-30">Java Fundamental</a> <br>
+                                    <a class="txt-20">Chapter 3: Looping Program</a> <br>
+                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                    <a class="txt-16">Repeat or Looping Programs is also one of the basics of Coding Science.</a> <br>
+                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985472037112741888">
                                         <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
                                     </a>
                                     <a href="">

@@ -1,0 +1,45 @@
+<html>
+    <title>Java Tutorial</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .card-item {
+            background-image: url('img/bg_java_item.png'); 
+            background-size: cover;
+            height: 300px;
+        }
+        [class*="col-"] {
+            float: left;
+            border: solid 1px red;
+            position: relative;
+        }
+        .col-3 {
+            width: 30%;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .page-layout {
+            background-color: aliceblue;
+            width: 90%;
+            margin: 0 auto;
+        }
+    </style>
+    <body style="background-color: #bfbfff;">
+        <div class="page-layout">
+            <div class="row">
+                <div class="col-3">
+                    Test
+                </div>
+                <div class="col-3">
+                    Test
+                </div>
+                <div class="col-3">
+                    Test
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
