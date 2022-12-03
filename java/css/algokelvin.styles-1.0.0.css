@@ -3,4 +3,94 @@
  * Copyright 2022 The AlgoKelvin Authors
  * Licensed ...
  */
- 
+ .card-item {
+    background-size: cover;
+    height: 300px;
+}
+.center-layout {
+    margin: 0 auto;
+}
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+    margin-top:0;
+    margin-bottom:.5rem;
+    font-weight:500;
+    line-height:1.2;
+}
+.h1,h1 {
+    font-size:calc(1.375rem + 1.5vw)
+}
+
+.page-java {
+    background-color: aliceblue;
+    width: 90%;
+    margin: 0 auto;
+}
+.page-tutorial {
+    width: 95%;
+    margin: 0 auto;
+}
+td {
+    padding: 16px;
+}
+.txt-30 {
+    font-size: 30px;
+}
+.txt-22 {
+    font-size: 22px;
+}
+.txt-20 {
+    font-size: 20px;
+}
+.txt-18 {
+    font-size: 18px;
+}
+.txt-16 {
+    font-size: 16px;
+}
+.p-10 {
+    padding: 10px;
+}
+.ptb-8 {
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.w-9 {
+    width: 90%;
+}
+.w-10 {
+    width: 100%;
+}
+[class*="col-"] {
+    float: left;
+    position: relative;
+    padding: 16px;
+}
+.col-3 {
+    width: 30%;
+}
+.col-4 {
+    width: 40%;
+}
+.col-45 {
+    width: 45%;
+}
+.col-5 {
+    width: 50%;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+@media only screen and (max-width: 1300px) {
+    .col-3 { width: 25%; }
+    [class*="col-"] {
+        padding: 12px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .col-3 { width: 100%; }
+    [class*="col-"] {
+        padding: 8px;
+    }
+}
