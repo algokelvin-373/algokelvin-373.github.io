@@ -5,9 +5,11 @@
     <link rel="icon" type="image/x-icon" href="img/ic_logo_algokelvin.png">
     <style>
         .card-item {
-            background-image: url('img/bg_java_item.png'); 
             background-size: cover;
             height: 300px;
+        }
+        .center-layout {
+            margin: 0 auto;
         }
         .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
             margin-top:0;
@@ -46,9 +48,18 @@
         .txt-16 {
             font-size: 16px;
         }
+        .p-10 {
+            padding: 10px;
+        }
         .ptb-8 {
             padding-bottom: 8px;
             padding-top: 8px;
+        }
+        .w-9 {
+            width: 90%;
+        }
+        .w-10 {
+            width: 100%;
         }
         [class*="col-"] {
             float: left;
@@ -95,10 +106,10 @@
                 <a href="https://www.youtube.com/c/AlgoKelvin373"><img alt="Youtube" src="https://img.shields.io/youtube/channel/subscribers/UCpSHZFRx64xWwXYbWbyXxfw?style=social"></a>
             </p>
             <div class="page-tutorial">
-                <div style="margin: 0 auto; width: 90%;">
+                <div class="center-layout w-9">
                     <div class="row">
                         <div class="col-3">
-                            <div class="card-item">
+                            <div class="card-item" style="background-image: url('img/bg_java_item.png');">
                                 <p align="center">
                                     <a class="txt-30">Java Fundamental</a> <br>
                                     <a class="txt-20">Chapter 1: Input Output</a> <br>
@@ -114,7 +125,7 @@
                             </div>
                         </div>
                         <div class="col-3">
-                            <div class="card-item">
+                            <div class="card-item" style="background-image: url('img/bg_java_item.png');">
                                 <p align="center">
                                     <a class="txt-30">Java Fundamental</a> <br>
                                     <a class="txt-20">Chapter 2: Decision Program</a> <br>
@@ -130,7 +141,7 @@
                             </div>
                         </div>
                         <div class="col-3">
-                            <div class="card-item">
+                            <div class="card-item" style="background-image: url('img/bg_java_item.png');">
                                 <p align="center">
                                     <a class="txt-30">Java Fundamental</a> <br>
                                     <a class="txt-20">Chapter 3: Looping Program</a> <br>
@@ -148,7 +159,7 @@
                     </div>
                     <div class="row">
                         <div class="col-3">
-                            <div class="card-item">
+                            <div class="card-item" style="background-image: url('img/bg_java_item.png');">
                                 <p align="center">
                                     <a class="txt-30">Java Fundamental</a> <br>
                                     <a class="txt-20">Chapter 4: Array</a> <br>
@@ -164,7 +175,7 @@
                             </div>
                         </div>
                         <div class="col-3">
-                            <div class="card-item">
+                            <div class="card-item" style="background-image: url('img/bg_java_item.png');">
                                 <p align="center">
                                     <a class="txt-30">Java Fundamental</a> <br>
                                     <a class="txt-20">Chapter 5: Function</a> <br>
@@ -185,8 +196,8 @@
         </div>
     </body>
     <footer style="background: #D0E0FF; margin-top: 20px;">
-        <div style="border-style: solid; margin: 0 auto; width: 90%;">
-            <div style="text-align:center; width: 750px; margin: 0 auto; border-style: dotted;">
+        <div class="center-layout w-9" style="border-style: solid; ">
+            <div class="center-layout" style="text-align:center; width: 750px; border-style: dotted;">
                 <div class="row">
                     <div class="col-45" style="border-style: double; text-align:left; ">
                         <h3 class="txt-22"><b>Contact us</b></h3>
@@ -207,7 +218,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="txt-18" style="padding: 10px;">
+                <p class="txt-18 p-10">
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
                     Designed by <a href="index.html" target="_blank">AlgoKelvin</a><br>
                     <a>Version 1.0.0</a>
