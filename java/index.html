@@ -3,180 +3,101 @@
     <title>Java Tutorial</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="img/ic_logo_algokelvin.png">
-    <style>
-        .card-item {
-            background-image: url('img/bg_java_item.png'); 
-            background-size: cover;
-            height: 300px;
-        }
-        .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
-            margin-top:0;
-            margin-bottom:.5rem;
-            font-weight:500;
-            line-height:1.2
-        }
-        .h1,h1 {
-            font-size:calc(1.375rem + 1.5vw)
-        }
-
-        .page-java {
-            background-color: aliceblue;
-            width: 90%;
-            margin: 0 auto;
-        }
-        .page-tutorial {
-            width: 95%;
-            margin: 0 auto;
-        }
-        td {
-            padding: 16px;
-        }
-        .txt-30 {
-            font-size: 30px;
-        }
-        .txt-22 {
-            font-size: 22px;
-        }
-        .txt-20 {
-            font-size: 20px;
-        }
-        .txt-18 {
-            font-size: 18px;
-        }
-        .txt-16 {
-            font-size: 16px;
-        }
-        .ptb-8 {
-            padding-bottom: 8px;
-            padding-top: 8px;
-        }
-        [class*="col-"] {
-            float: left;
-            position: relative;
-            padding: 16px;
-        }
-        .col-3 {
-            width: 30%;
-        }
-        .col-4 {
-            width: 40%;
-        }
-        .col-45 {
-            width: 45%;
-        }
-        .col-5 {
-            width: 50%;
-        }
-        .row::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-        @media only screen and (max-width: 1300px) {
-            .col-3 { width: 25%; }
-            [class*="col-"] {
-                padding: 12px;
-            }
-        }
-        @media only screen and (max-width: 1000px) {
-            .col-3 { width: 100%; }
-            [class*="col-"] {
-                padding: 8px;
-            }
-        }
-    </style>
-    <body style="background-color: #bfbfff;">
-        <div class="page-java">
-            <img src="img/bg_java.png" width="100%">
-            <p align="center">
-                <a style="font-size: 40px;">Java Fundamental Tutorial</a> <br>
-                <a href="https://github.com/algokelvin-373"><img alt="Github" src="https://img.shields.io/github/followers/algokelvin-373?label=follow&style=social"></a>
-                <a href="https://www.youtube.com/c/AlgoKelvin373"><img alt="Youtube" src="https://img.shields.io/youtube/channel/views/UCpSHZFRx64xWwXYbWbyXxfw?style=social"></a>
-                <a href="https://www.youtube.com/c/AlgoKelvin373"><img alt="Youtube" src="https://img.shields.io/youtube/channel/subscribers/UCpSHZFRx64xWwXYbWbyXxfw?style=social"></a>
-            </p>
-            <div class="page-tutorial">
-                <div style="margin: 0 auto; width: 90%;">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="card-item">
-                                <p align="center">
-                                    <a class="txt-30">Java Fundamental</a> <br>
-                                    <a class="txt-20">Chapter 1: Input Output</a> <br>
-                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                    <a class="txt-16 ptb-8">This is my start to create video live coding Java Developer. The first is Input Output</a> <br>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986947967387672576">
-                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                    <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/InputOutput.java">
-                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                </p>
+    <link rel="stylesheet" href="css/algokelvin.styles-1.0.0.css">
+    <body style="background-color: #bfbfff; padding-top: -20px;">
+        <div>
+            <div class="page-java">
+                <img src="img/bg_java.png" width="100%">
+                <p align="center">
+                    <a style="font-size: 40px;">Java Fundamental Tutorial</a> <br>
+                    <a href="https://github.com/algokelvin-373"><img alt="Github" src="https://img.shields.io/github/followers/algokelvin-373?label=follow&style=social"></a>
+                    <a href="https://www.youtube.com/c/AlgoKelvin373"><img alt="Youtube" src="https://img.shields.io/youtube/channel/views/UCpSHZFRx64xWwXYbWbyXxfw?style=social"></a>
+                    <a href="https://www.youtube.com/c/AlgoKelvin373"><img alt="Youtube" src="https://img.shields.io/youtube/channel/subscribers/UCpSHZFRx64xWwXYbWbyXxfw?style=social"></a>
+                </p>
+                <div class="page-tutorial">
+                    <div class="center-layout w-9">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="card-item" style="background-image: url('img/bg_java_item.png');">
+                                    <p align="center">
+                                        <a class="txt-30">Java Fundamental</a> <br>
+                                        <a class="txt-20">Chapter 1: Input Output</a> <br>
+                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                        <a class="txt-16 ptb-8">This is my start to create video live coding Java Developer. The first is Input Output</a> <br>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986947967387672576">
+                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                        <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/InputOutput.java">
+                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card-item" style="background-image: url('img/bg_java_item.png');">
+                                    <p align="center">
+                                        <a class="txt-30">Java Fundamental</a> <br>
+                                        <a class="txt-20">Chapter 2: Decision Program</a> <br>
+                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                        <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985170096281305088">
+                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                        <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/Decision.java">
+                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card-item" style="background-image: url('img/bg_java_item.png');">
+                                    <p align="center">
+                                        <a class="txt-30">Java Fundamental</a> <br>
+                                        <a class="txt-20">Chapter 3: Looping Program</a> <br>
+                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                        <a class="txt-16">Repeat or Looping Programs is also one of the basics of Coding Science.</a> <br>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985472037112741888">
+                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                        <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/Looping.java">
+                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="card-item">
-                                <p align="center">
-                                    <a class="txt-30">Java Fundamental</a> <br>
-                                    <a class="txt-20">Chapter 2: Decision Program</a> <br>
-                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                    <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985170096281305088">
-                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                    <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/Decision.java">
-                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                </p>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="card-item" style="background-image: url('img/bg_java_item.png');">
+                                    <p align="center">
+                                        <a class="txt-30">Java Fundamental</a> <br>
+                                        <a class="txt-20">Chapter 4: Array</a> <br>
+                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                        <a class="txt-16 ptb-8">This is my start to create video live coding Java Developer. The first is Input Output</a> <br>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986164192361820160">
+                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                        <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/InputOutput.java">
+                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card-item">
-                                <p align="center">
-                                    <a class="txt-30">Java Fundamental</a> <br>
-                                    <a class="txt-20">Chapter 3: Looping Program</a> <br>
-                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                    <a class="txt-16">Repeat or Looping Programs is also one of the basics of Coding Science.</a> <br>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6985472037112741888">
-                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                    <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/Looping.java">
-                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="card-item">
-                                <p align="center">
-                                    <a class="txt-30">Java Fundamental</a> <br>
-                                    <a class="txt-20">Chapter 4: Array</a> <br>
-                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                    <a class="txt-16 ptb-8">This is my start to create video live coding Java Developer. The first is Input Output</a> <br>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986164192361820160">
-                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                    <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/InputOutput.java">
-                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card-item">
-                                <p align="center">
-                                    <a class="txt-30">Java Fundamental</a> <br>
-                                    <a class="txt-20">Chapter 5: Function</a> <br>
-                                    <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
-                                    <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
-                                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986363183061999616">
-                                        <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                    <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/Function.java">
-                                        <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
-                                    </a>
-                                </p>
+                            <div class="col-3">
+                                <div class="card-item" style="background-image: url('img/bg_java_item.png');">
+                                    <p align="center">
+                                        <a class="txt-30">Java Fundamental</a> <br>
+                                        <a class="txt-20">Chapter 5: Function</a> <br>
+                                        <img src="img/java_logo.svg" alt="logo" width="40%" height="40%" class="ptb-8"> <br>
+                                        <a class="txt-16 ">This is to show 'If Else' programs. Very simple, basic, and always always finds this live.</a> <br>
+                                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:6986363183061999616">
+                                            <img src="img/ic_linkedin.png" alt="linkedin" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                        <a href="https://github.com/algokelvin-373/LiveStreamChannel/blob/master/JavaCoding/Function.java">
+                                            <img src="img/ic_github.png" alt="github" width="10%" height="10%" class="ptb-8">
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -184,9 +105,9 @@
             </div>
         </div>
     </body>
-    <footer style="background: #D0E0FF; margin-top: 20px;">
-        <div style="border-style: solid; margin: 0 auto; width: 90%;">
-            <div style="text-align:center; width: 750px; margin: 0 auto; border-style: dotted;">
+    <footer class="center-layout w-9" style="background: #D0E0FF; padding-bottom: 10px;">
+        <div class="center-layout w-9" style="border-style: solid; ">
+            <div class="center-layout" style="text-align:center; width: 750px; border-style: dotted;">
                 <div class="row">
                     <div class="col-45" style="border-style: double; text-align:left; ">
                         <h3 class="txt-22"><b>Contact us</b></h3>
@@ -207,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="txt-18" style="padding: 10px;">
+                <p class="txt-18 p-10">
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
                     Designed by <a href="index.html" target="_blank">AlgoKelvin</a><br>
                     <a>Version 1.0.0</a>
