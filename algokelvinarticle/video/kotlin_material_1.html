@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video YouTube Responsif</title>
+    <style>
+        /* Container pembungkus video untuk menjaga rasio 16:9 */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 45%; /* Adjusted to 80% of 56.25% (16:9 ratio) */
+            height: 0;
+            overflow: hidden;
+        }
+        /* Gaya untuk iframe agar mengisi seluruh container */
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe width="545" 
+            height="300"
+            src="https://www.youtube.com/embed/a8rkQHA-nG0?si=1-33FYVARRs69HvM" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div>
+        Test
+    </div>
+</body>
+</html>
