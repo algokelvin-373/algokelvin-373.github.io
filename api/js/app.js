@@ -33,3 +33,13 @@ async function fetchProducts() {
         console.error('Error fetching products:', error);
     }
 }
+
+// Get Product by ID
+async function fetchProductById(id) {
+    try {
+        const product = await api.getProductById(id);
+        displayResult(product)
+    } catch (error) {
+        console.error('Error fetching product by id:', error);
+    }
+}
