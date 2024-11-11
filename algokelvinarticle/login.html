@@ -139,6 +139,38 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Login Javascript -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const loginData = {
+                username: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            // Send Request for Login
+            fetch('http://localhost/algokelvin-373.github.io/algokelvinarticle/api/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(loginData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    console.log(data.message);  // Login successful
+                    window.location.href = "http://localhost/algokelvin-373.github.io/algokelvinarticle";
+                } else {
+                    console.error(data.message);  // Error message
+                    alert("Login failed: " + data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 
 </html>
