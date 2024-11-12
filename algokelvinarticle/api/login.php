@@ -15,7 +15,7 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     // Set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Success Connect DB";
+    // echo "Success Connect DB";
 } catch (PDOException $e) {
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed: ' . $e->getMessage()]);
     exit;
@@ -23,12 +23,12 @@ try {
 
 $data = json_decode(file_get_contents("php://input"), true);
 // Sample data for testing success query and validate for login
-$email_user = "admin1@gmail.com";
-$password = "password";
+// $email_user = "admin1@gmail.com";
+// $password = "password";
 
 // Data from Login Page
-// $email_user = $data["username"] ?? '';
-// $password = $data["password"] ?? '';
+$email_user = $data["username"] ?? '';
+$password = $data["password"] ?? '';
 
 // Prepare the SQL statement to check the username
 $query = "SELECT * FROM ac_user WHERE email_user = :email_user AND password = :password";
@@ -40,14 +40,14 @@ $stmt->execute();
 // Check if the user exists
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($user) {
-    echo "Email: " . $user['email_user'] . "<br>";
-    echo "Password: " . $user['password'] . "<br>";
-} else {
-    echo "User not found.";
-}
+// if ($user) {
+//     echo "Email: " . $user['email_user'] . "<br>";
+//     echo "Password: " . $user['password'] . "<br>";
+// } else {
+//     echo "User not found.";
+// }
 
-//if ($data) {
+if ($data) {
     if ($email_user === $user['email_user'] && $password === $user['password']) {
         echo json_encode([
             "status" => "success",
@@ -59,7 +59,12 @@ if ($user) {
             "message"=> "Invalid username or password"
         ]);
     }
-//}
+} else {
+    echo json_encode([
+        "status" => "error",
+        "message"=> "Invalid request"
+    ]);
+}
 
 // $validUsername = "admin@gmail.com";
 // $validPassword = "password";
