@@ -13,9 +13,7 @@ $password = ''; // Your MySQL password (leave empty for default)
 // Connect to the database using PDO
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    // Set the PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Success Connect DB";
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set the PDO error mode to exception
 } catch (PDOException $e) {
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed: ' . $e->getMessage()]);
     exit;
@@ -40,13 +38,6 @@ $stmt->execute();
 // Check if the user exists
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// if ($user) {
-//     echo "Email: " . $user['email_user'] . "<br>";
-//     echo "Password: " . $user['password'] . "<br>";
-// } else {
-//     echo "User not found.";
-// }
-
 if ($data) {
     if ($email_user === $user['email_user'] && $password === $user['password']) {
         echo json_encode([
@@ -65,22 +56,5 @@ if ($data) {
         "message"=> "Invalid request"
     ]);
 }
-
-// $validUsername = "admin@gmail.com";
-// $validPassword = "password";
-
-// $data = json_decode(file_get_contents("php://input"), true);
-
-// if ($data) {
-//     $username = $data["username"] ?? '';
-//     $password = $data["password"] ?? '';
-
-    
-// } else {
-//     echo json_encode([
-//         "status" => "error",
-//         "message"=> "Invalid request"
-//     ]);
-// }
 
 ?>
