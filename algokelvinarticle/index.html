@@ -80,8 +80,9 @@
                         <a href="about.html" class="nav-item nav-link">Tentang Kami</a>
                         <a href="contact.html" class="nav-item nav-link">Kontak</a>
                     </div>
-                    <a href="login.html" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
-                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Sign In</a>
+                    <img id="profileIcon" style="display: none;" class="img-fluid rounded-circle py-2 px-2" src="img/ic_man_person.png" width="50" height="50" alt="">
+                    <a id="loginButton" style="display: inline;" href="login.html" class="btn rounded-pill py-2 px-4 ms-3">Login</a>
+                    <a id="signInButton" style="display: inline;" href="" class="btn rounded-pill py-2 px-4 ms-3">Sign In</a>
                 </div>
             </nav>
 
@@ -622,6 +623,18 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+            if (isLoggedIn) {
+                console.log("Anda sudah login");
+                document.getElementById("loginButton").style.display = "none";
+                document.getElementById("signInButton").style.display = "none";
+                document.getElementById("profileIcon").style.display = "inline";
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -162,6 +162,14 @@
             .then(data => {
                 if (data.status === "success") {
                     console.log(data.message);  // Login successful
+
+                    // Save status login into localStorage
+                    localStorage.setItem("isLoggedIn", "true");
+
+                    // document.getElementById("loginButton").style.display = "none";
+                    // document.getElementById("signInButton").style.display = "none";
+                    // document.getElementById("profileIcon").style.display = "inline";
+
                     window.location.href = "http://localhost/algokelvin-373.github.io/algokelvinarticle";
                 } else {
                     console.error(data.message);  // Error message
@@ -170,6 +178,38 @@
             })
             .catch(error => console.error('Error:', error));
         });
+
+        // function login() {
+        //     const loginData = {
+        //         username: document.getElementById('email').value,
+        //         password: document.getElementById('password').value
+        //     };
+
+        //     // Send Request for Login
+        //     fetch('http://localhost/algokelvin-373.github.io/algokelvinarticle/api/login.php', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(loginData)
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         if (data.status === "success") {
+        //             console.log(data.message);  // Login successful
+
+        //             document.getElementById("loginButton").style.display = "none";
+        //             document.getElementById("signInButton").style.display = "none";
+        //             document.getElementById("profileIcon").style.display = "inline";
+
+        //             window.location.href = "http://localhost/algokelvin-373.github.io/algokelvinarticle";
+        //         } else {
+        //             console.error(data.message);  // Error message
+        //             alert("Login failed: " + data.message);
+        //         }
+        //     })
+        //     .catch(error => console.error('Error:', error));
+        // }
     </script>
 </body>
 
