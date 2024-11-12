@@ -30,6 +30,43 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .profile-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: relative;
+        }
+        .dropdown-profile-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            padding: 0.5rem 0;
+            z-index: 1000;
+        }
+        .dropdown-profile-menu.show {
+            display: block;
+        }
+        .dropdown-profile-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .dropdown-profile-menu-item:hover {
+            background-color: #f8f9fa;
+        }
+        .dropdown-profile-menu-item i {
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -78,8 +115,16 @@
                         <a href="about.html" class="nav-item nav-link active">Tentang Kami</a>
                         <a href="contact.html" class="nav-item nav-link">Kontak</a>
                     </div>
-                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
-                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Sign In</a>
+                    <div class="profile-icon">
+                        <img id="profileIcon" style="display: none;" class="img-fluid rounded-circle py-2 px-2" src="img/ic_man_person.png" width="50" height="50" alt="">
+                        <div id="dropdownProfileMenu" class="dropdown-profile-menu">
+                            <a href="#" class="dropdown-profile-menu-item"><i class="fas fa-cog"></i> Settings</a>
+                            <a href="#" class="dropdown-profile-menu-item"><i class="fas fa-user"></i> Profile</a>
+                            <a onclick="logout()" class="dropdown-profile-menu-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                    <a id="loginButton" style="display: inline;" href="login.html" class="btn rounded-pill py-2 px-4 ms-3">Login</a>
+                    <a id="signInButton" style="display: inline;" href="" class="btn rounded-pill py-2 px-4 ms-3">Sign In</a>
                 </div>
             </nav>
 
@@ -435,6 +480,38 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        const profileIcon = document.getElementById("profileIcon");
+        const dropdownProfileMenu = document.getElementById("dropdownProfileMenu");
+
+        profileIcon.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownProfileMenu.classList.toggle('show')
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!dropdownProfileMenu.contains(e.target) && !profileIcon.contains(e.target)) {
+                dropdownProfileMenu.classList.remove('show');
+            }
+        });
+
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+            if (isLoggedIn) {
+                console.log("Anda sudah login");
+                document.getElementById("loginButton").style.display = "none";
+                document.getElementById("signInButton").style.display = "none";
+                profileIcon.style.display = "inline";
+            }
+        }
+
+        function logout() {
+            console.log("Anda proses Logout")
+            localStorage.removeItem('isLoggedIn')
+            window.location.href = "http://localhost/algokelvin-373.github.io/algokelvinarticle";
+        }
+    </script>
 </body>
 
 </html>
