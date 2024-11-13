@@ -1,6 +1,5 @@
 <?php
-// Set up the response format to return JSON
-header('Content-Type: application/json');
+include '../db.php';
 
 $data = json_decode(file_get_contents("php://input"), true);
 $username = $data["username"] ?? '';
@@ -11,34 +10,6 @@ $password = password_hash($data['password'], PASSWORD_DEFAULT);
 
 $secretKey = "$password";
 $token = hash_hmac('sha256', $username . $password, $secretKey);
-
-// Make function to connect DB
-function connectDB() {
-    // Database credentials
-    $host = 'localhost'; // Your MySQL host (usually localhost)
-    $dbname = 'shoppingyuk_db'; // Database name
-    $username = 'root'; // Your MySQL username
-    $password = ''; // Your MySQL password (leave empty for default)
-
-    // Connect to the database using PDO
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set the PDO error mode to exception
-        return $pdo;
-    } catch (PDOException $e) {
-        echo json_encode(['status' => 'error', 'message' => 'Database connection failed: ' . $e->getMessage()]);
-        exit;
-    }
-}
-
-// Methods format response JSON
-function resultResponse($code, $status, $message) {
-    echo json_encode([
-        'code'=> $code,
-        'status'=> $status,
-        'message'=> $message
-    ]);
-}
 
 function checkUserInDB($pdo, $username, $phoneNumber) {
     $query = "SELECT * FROM sy_user WHERE username = :username AND phone_number = :phone_number LIMIT 1";
