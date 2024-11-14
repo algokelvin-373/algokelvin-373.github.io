@@ -14,10 +14,7 @@ function checkUserByUsernameAndPassword($pdo, $username, $password) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function updateTokenUser($pdo, $username, $password) {
-    $secretKey = "$password";
-    $token = hash_hmac('sha256', $username . $password, $secretKey);
-
+function updateTokenUser($pdo, $username, $password, $token) {
     $query = "UPDATE sy_user SET token = :token WHERE username = :username AND password = :password";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':token', $token);
@@ -33,8 +30,16 @@ $pdo = connectDB();
 if (checkUserByUsernameAndPassword($pdo, $username, $password)) {
     resultResponse(0, 'Failed','Failed to Login');
 } else {
-    updateTokenUser($pdo, $username, $password);
-    resultResponse(1,'Success','Success to Login');
+    $secretKey = "$password";
+    $token = hash_hmac('sha256', $username . $password, $secretKey);
+
+    updateTokenUser($pdo, $username, $password, $token);
+
+    $data = [
+        "token" => $token
+    ];
+
+    resultResponse(1,'Success','Success to Login', $data);
 }
 
 ?>

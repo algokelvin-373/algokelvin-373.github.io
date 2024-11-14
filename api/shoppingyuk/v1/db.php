@@ -22,11 +22,12 @@ function connectDB() {
 }
 
 // Methods format response JSON
-function resultResponse($code, $status, $message) {
+function resultResponse($code, $status, $message, $data = null) {
     echo json_encode([
         'code'=> $code,
         'status'=> $status,
-        'message'=> $message
+        'message'=> $message,
+        'data'=> $data,
     ]);
 }
 ?>
