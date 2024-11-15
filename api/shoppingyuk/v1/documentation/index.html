@@ -43,7 +43,7 @@
         #getProfileUserForm {
             display: none;
         }
-        label, input, button {
+        #labelUserId, #userId, #btnSubmitGetProfile {
             display: block;
         }
     </style>
@@ -54,10 +54,10 @@
     <div class="layout-api">
         <h4 id="formToggle">Get Profile User</h4>
         <form id="getProfileUserForm">
-            <label for="userId">User ID:</label>
-            <input type="text" id="userId" name="userId" required> <br>
-            <button type="submit">Send Request</button>
-            <div id="result"></div>
+            <label id="labelUserId" for="userId">User ID:</label>
+            <input id="userId" type="text" name="userId" required> <br>
+            <button id="btnSubmitGetProfile" type="submit">Send Request</button>
+            <div id="resultGetProfile"></div>
         </form>
     </div>
 
@@ -77,29 +77,25 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const formToggle = document.getElementById('formToggle');
-            const getProfileUserForm = document.getElementById('getProfileUserForm');
-            
-            formToggle.addEventListener('click', function() {
-                getProfileUserForm.style.display = getProfileUserForm.style.display === 'none' ? 'block' : 'none';
-            });
-
-            getProfileUserForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                const userId = document.getElementById('userId').value;
-                console.log(userId)
-
-                getProfileUser(userId)
-                    .then(data => {
-                        getProfileUserForm.reset();
-                        const resultDiv = document.getElementById('result');
-                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
-                    }).catch(error => {
-                        alert('Failed to create user: ' + error);
-                    });
-            });
+        const formToggle = document.getElementById('formToggle');
+        const getProfileUserForm = document.getElementById('getProfileUserForm');
+        const btnSubmitGetProfile = document.getElementById('btnSubmitGetProfile');
+        
+        formToggle.addEventListener('click', function() {
+            getProfileUserForm.style.display = getProfileUserForm.style.display === 'none' ? 'block' : 'none';
+        });
+        btnSubmitGetProfile.addEventListener('click', function (event) {
+            event.preventDefault();
+            const userId = document.getElementById('userId').value;
+            console.log(userId)
+            getProfileUser(userId)
+                .then(data => {
+                    getProfileUserForm.reset();
+                    const resultDiv = document.getElementById('resultGetProfile');
+                    resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                }).catch(error => {
+                    alert('Failed to create user: ' + error);
+                });
         });
     </script>
 </body>
