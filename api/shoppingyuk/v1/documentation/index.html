@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation API ShoppingYuk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #aaffaa;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .layout-api {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Documentation API ShoppingYuk</h1>
+
+    <div class="layout-api">
+        <h4>Get Profile User</h4>
+        <form id="getProfileUserForm">
+            <label for="userId">User ID:</label>
+            <input type="text" id="userId" name="userId" required> <br>
+            <button type="submit">Send</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function getProfileUser(userId) {
+            return new Promise((resolve, reject) => {
+                fetch(`http://localhost/algokelvin-373.github.io/api/shoppingyuk/v1/user/getProfile.php/${userId}`)
+                    .then(response => {
+                        console.log("Response Jalan")
+                        if (!response.ok) {
+                            reject('Network response was not ok ' + response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(data => resolve(data))
+                    .catch(error => reject('There was a problem with the fetch operation: ' + error));
+            });
+        }
+
+        document.getElementById('getProfileUserForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const userId = document.getElementById('userId').value;
+            console.log(userId)
+
+            getProfileUser(userId)
+                .then(data => {
+                    console.log('Jalan 1');
+                    console.log('User Data:', data);
+                    console.log('Jalan 2');
+                    document.getElementById('getProfileUserForm').reset();
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    alert('Get User successfully!');
+                }).catch(error => {
+                    alert('Failed to create user: ' + error);
+                });
+        });
+    </script>
+</body>
+</html>
