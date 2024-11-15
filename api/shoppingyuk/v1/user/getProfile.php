@@ -20,6 +20,7 @@ function sendRequest() {
 
     if ($profileUser) {
         $data = [
+            "id" => $profileUser["id"],
             "name_first" => $profileUser["name_first"],
             "name_last" => $profileUser["name_last"],
             "username" => $profileUser["username"],

@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 90%;
             margin: 0 auto;
             padding: 20px;
             background-color: #aaffaa;
@@ -15,9 +15,14 @@
         button {
             margin: 10px;
             padding: 10px;
+            max-width: 90%;
+            border-radius: 5px;
+            border-color: green;
+            background-color: green;
+            color: #ffffff;
         }
         pre {
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             padding: 10px;
             border-radius: 5px;
             white-space: pre-wrap;
@@ -38,9 +43,9 @@
         <form id="getProfileUserForm">
             <label for="userId">User ID:</label>
             <input type="text" id="userId" name="userId" required> <br>
-            <button type="submit">Send</button>
+            <button type="submit">Send Request</button>
+            <div id="result"></div>
         </form>
-        <div id="result"></div>
     </div>
 
     <script>
@@ -67,13 +72,9 @@
 
             getProfileUser(userId)
                 .then(data => {
-                    console.log('Jalan 1');
-                    console.log('User Data:', data);
-                    console.log('Jalan 2');
                     document.getElementById('getProfileUserForm').reset();
                     const resultDiv = document.getElementById('result');
                     resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
-                    alert('Get User successfully!');
                 }).catch(error => {
                     alert('Failed to create user: ' + error);
                 });
