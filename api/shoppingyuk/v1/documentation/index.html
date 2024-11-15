@@ -33,13 +33,26 @@
             padding: 10px;
             border-radius: 5px;
         }
+        h4 {
+            cursor: pointer;
+            color: black;
+        }
+        h4:hover {
+            text-decoration: underline;
+        }
+        #getProfileUserForm {
+            display: none;
+        }
+        label, input, button {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <h1 style="text-align: center;">Documentation API ShoppingYuk</h1>
 
     <div class="layout-api">
-        <h4>Get Profile User</h4>
+        <h4 id="formToggle">Get Profile User</h4>
         <form id="getProfileUserForm">
             <label for="userId">User ID:</label>
             <input type="text" id="userId" name="userId" required> <br>
@@ -64,20 +77,29 @@
             });
         }
 
-        document.getElementById('getProfileUserForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+        document.addEventListener('DOMContentLoaded', function () {
+            const formToggle = document.getElementById('formToggle');
+            const getProfileUserForm = document.getElementById('getProfileUserForm');
+            
+            formToggle.addEventListener('click', function() {
+                getProfileUserForm.style.display = getProfileUserForm.style.display === 'none' ? 'block' : 'none';
+            });
 
-            const userId = document.getElementById('userId').value;
-            console.log(userId)
+            getProfileUserForm.addEventListener('submit', function (event) {
+                event.preventDefault();
 
-            getProfileUser(userId)
-                .then(data => {
-                    document.getElementById('getProfileUserForm').reset();
-                    const resultDiv = document.getElementById('result');
-                    resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
-                }).catch(error => {
-                    alert('Failed to create user: ' + error);
-                });
+                const userId = document.getElementById('userId').value;
+                console.log(userId)
+
+                getProfileUser(userId)
+                    .then(data => {
+                        getProfileUserForm.reset();
+                        const resultDiv = document.getElementById('result');
+                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    }).catch(error => {
+                        alert('Failed to create user: ' + error);
+                    });
+            });
         });
     </script>
 </body>
