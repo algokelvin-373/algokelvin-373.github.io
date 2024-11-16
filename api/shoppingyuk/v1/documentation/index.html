@@ -40,10 +40,10 @@
         h4:hover {
             text-decoration: underline;
         }
-        #getProfileUserForm {
+        #getProfileUserForm, #loginForm {
             display: none;
         }
-        #labelUserId, #userId, #btnSubmitGetProfile {
+        #labelUserId, #userId, #btnSubmitGetProfile, #labelUsername, #username, #labelPassword, #password, #btnSubmitLogin {
             display: block;
         }
     </style>
@@ -52,13 +52,29 @@
     <h1 style="text-align: center;">Documentation API ShoppingYuk</h1>
 
     <div class="layout-api">
-        <h4 id="formToggle">Get Profile User</h4>
-        <form id="getProfileUserForm">
-            <label id="labelUserId" for="userId">User ID:</label>
-            <input id="userId" type="text" name="userId" required> <br>
-            <button id="btnSubmitGetProfile" type="submit">Send Request</button>
-            <div id="resultGetProfile"></div>
-        </form>
+        <h1>User</h1>
+        <ul>
+            <li>
+                <h4 id="formToggle">Get Profile User</h4>
+                <form id="getProfileUserForm">
+                    <label id="labelUserId" for="userId">User ID:</label>
+                    <input id="userId" type="text" name="userId" required> <br>
+                    <button id="btnSubmitGetProfile" type="submit">Send Request</button>
+                    <div id="resultGetProfile"></div>
+                </form>
+            </li>
+            <li>
+                <h4 id="loginToggle">Login User</h4>
+                <form id="loginForm">
+                    <label id="labelUsername" for="username">Username:</label>
+                    <input id="username" type="text" name="username" required> <br>
+                    <label id="labelPassword" for="password">Password:</label>
+                    <input id="password" type="password" name="password" required> <br>
+                    <button id="btnSubmitLogin" type="submit">Send Request</button>
+                    <div id="resultLogin"></div>
+                </form>
+            </li>
+        </ul>
     </div>
 
     <script>
@@ -77,26 +93,80 @@
             });
         }
 
-        const formToggle = document.getElementById('formToggle');
-        const getProfileUserForm = document.getElementById('getProfileUserForm');
-        const btnSubmitGetProfile = document.getElementById('btnSubmitGetProfile');
-        
-        formToggle.addEventListener('click', function() {
-            getProfileUserForm.style.display = getProfileUserForm.style.display === 'none' ? 'block' : 'none';
-        });
-        btnSubmitGetProfile.addEventListener('click', function (event) {
-            event.preventDefault();
-            const userId = document.getElementById('userId').value;
-            console.log(userId)
-            getProfileUser(userId)
-                .then(data => {
-                    getProfileUserForm.reset();
-                    const resultDiv = document.getElementById('resultGetProfile');
+        function loginUser(user) {
+            return new Promise((resolve, reject) => {
+                fetch('http://localhost/algokelvin-373.github.io/api/shoppingyuk/v1/user/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                }).then(response => {
+                    console.log("Response Jalan Login")
+                    if (!response.ok) {
+                        reject('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                }).then(data => resolve(data))
+                .catch(error => reject('There was a problem with the fetch operation: ' + error));
+            });
+        }
+
+        function requestGetProfileUser() {
+            const formToggle = document.getElementById('formToggle');
+            const getProfileUserForm = document.getElementById('getProfileUserForm');
+            const btnSubmitGetProfile = document.getElementById('btnSubmitGetProfile');
+            
+            formToggle.addEventListener('click', function() {
+                getProfileUserForm.style.display = getProfileUserForm.style.display === 'none' ? 'block' : 'none';
+            });
+            btnSubmitGetProfile.addEventListener('click', function (event) {
+                event.preventDefault();
+                const userId = document.getElementById('userId').value;
+                console.log(userId)
+                getProfileUser(userId)
+                    .then(data => {
+                        getProfileUserForm.reset();
+                        const resultDiv = document.getElementById('resultGetProfile');
+                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    }).catch(error => {
+                        alert('Failed to create user: ' + error);
+                    });
+            });
+        }
+
+        function requestLogin() {
+            const loginToggle = document.getElementById('loginToggle');
+            const loginForm = document.getElementById('loginForm');
+            const btnSubmitLogin = document.getElementById('btnSubmitLogin');
+
+            loginToggle.addEventListener('click', function() {
+                loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+            });
+
+            btnSubmitLogin.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                console.log(username);
+
+                loginUser({
+                    username,
+                    password
+                }).then(data => {
+                    loginForm.reset();
+                    const resultDiv = document.getElementById('resultLogin')
                     resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
                 }).catch(error => {
-                    alert('Failed to create user: ' + error);
-                });
-        });
+                    alert('Failed to login user: ' + error);
+                })
+            });
+        }
+
+        requestGetProfileUser();
+        requestLogin();
     </script>
 </body>
 </html>
