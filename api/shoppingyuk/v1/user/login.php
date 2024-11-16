@@ -46,8 +46,6 @@ function sendRequestLoginUser() {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sendRequestLoginUser();
-} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    echo json_encode(["message" => "Error to Response Data"]);
 } else {
     http_response_code(405); // Method Not Allowed
     echo json_encode(["error" => "Method not allowed"]);

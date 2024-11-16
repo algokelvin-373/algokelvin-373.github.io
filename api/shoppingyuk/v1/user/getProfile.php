@@ -34,8 +34,6 @@ function sendRequest() {
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     sendRequest();
-} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo json_encode(["message" => "Error to Response Data"]);
 } else {
     http_response_code(405); // Method Not Allowed
     echo json_encode(["error" => "Method not allowed"]);
