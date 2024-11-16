@@ -62,17 +62,28 @@ function register($pdo) {
     }
 }
 
-$pdo = connectDB(); // connect DB
+function sendRequestRegister() {
+    global $username, $phoneNumber;
 
-// Check in DB to avoid duplicate data regsiter by username and phone_number
-if (checkUserInDB($pdo, $username, $phoneNumber)) {
-    resultResponse(0, 'Error', 'Username has existed');
-} else {
-    if (register($pdo)) {
-        resultResponse(1,'Success', 'Success to register');
+    $pdo = connectDB(); // connect DB
+
+    // Check in DB to avoid duplicate data regsiter by username and phone_number
+    if (checkUserInDB($pdo, $username, $phoneNumber)) {
+        resultResponse(0, 'Error', 'Username has existed');
     } else {
-        resultResponse(0,'Failed', 'Failed to register');
+        if (register($pdo)) {
+            resultResponse(1,'Success', 'Success to register');
+        } else {
+            resultResponse(0,'Failed', 'Failed to register');
+        }
     }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    sendRequestRegister();
+} else {
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(["error" => "Method not allowed"]);
 }
 
 ?>

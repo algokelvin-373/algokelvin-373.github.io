@@ -1,9 +1,6 @@
 <?php
 include '../db.php';
 
-$data = json_decode(file_get_contents("php://input"), true);
-$userId = $data['userId'];
-
 function getProfileUser($pdo, $userId) {
     $query = "SELECT * FROM sy_user WHERE id = :id";
     $stmt = $pdo->prepare($query);
@@ -12,19 +9,34 @@ function getProfileUser($pdo, $userId) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-$pdo = connectDB();
-$profileUser = getProfileUser($pdo,$userId);
+function sendRequest() {
+    $data = json_decode(file_get_contents("php://input"), true);
+    $path = $_SERVER['REQUEST_URI'];
+    $partParts = explode('/', $path);
+    $userId = $partParts[7];
 
-if ($profileUser) {
-    $data = [
-        "name_first" => $profileUser["name_first"],
-        "name_last" => $profileUser["name_last"],
-        "username" => $profileUser["username"],
-        "phone_number" => $profileUser["phone_number"],
-    ];
-    resultResponse(1, "Success", "Success to Get Profile User", $data);
+    $pdo = connectDB();
+    $profileUser = getProfileUser($pdo,$userId);
+
+    if ($profileUser) {
+        $data = [
+            "id" => $profileUser["id"],
+            "name_first" => $profileUser["name_first"],
+            "name_last" => $profileUser["name_last"],
+            "username" => $profileUser["username"],
+            "phone_number" => $profileUser["phone_number"],
+        ];
+        resultResponse(1, "Success", "Success to Get Profile User", $data);
+    } else {
+        resultResponse(0, "Failed", "Failed to Get Profile User");
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    sendRequest();
 } else {
-    resultResponse(0, "Failed", "Failed to Get Profile User");
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(["error" => "Method not allowed"]);
 }
 
 ?>

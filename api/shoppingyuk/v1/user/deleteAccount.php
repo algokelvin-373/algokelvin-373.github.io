@@ -1,9 +1,6 @@
 <?php
 include '../db.php';
 
-$data = json_decode(file_get_contents("php://input"), true);
-$userId = $data['userId'];
-
 function deleteProfile($pdo, $userId) {
     $query = "DELETE FROM sy_user WHERE id = :id";
     $stmt = $pdo->prepare($query);
@@ -12,12 +9,24 @@ function deleteProfile($pdo, $userId) {
     return $stmt->rowCount() > 0;
 }
 
-$pdo = connectDB();
+function sendRequestDeleteAccount() {
+    $data = json_decode(file_get_contents("php://input"), true);
+    $userId = $data['userId'];
 
-if (deleteProfile($pdo, $userId)) {
-    resultResponse(1, 'success','Success to Delete Account');
+    $pdo = connectDB();
+
+    if (deleteProfile($pdo, $userId)) {
+        resultResponse(1, 'success','Success to Delete Account');
+    } else {
+        resultResponse(0, "Failed", "Failed to Delete Account");
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    sendRequestDeleteAccount();
 } else {
-    resultResponse(0, "Failed", "Failed to Delete Account");
+    http_response_code(405);
+    echo json_encode(["error" => "Method not allowed"]);
 }
 
 ?>

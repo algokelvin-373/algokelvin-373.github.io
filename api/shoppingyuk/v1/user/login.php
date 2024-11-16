@@ -1,10 +1,6 @@
 <?php
 include '../db.php';
 
-$data = json_decode(file_get_contents("php://input"), true);
-$username = $data["username"] ?? '';
-$password = password_hash($data['password'], PASSWORD_DEFAULT);
-
 function checkUserByUsernameAndPassword($pdo, $username, $password) {
     $query = "SELECT * FROM sy_user WHERE username = :username AND password = :password LIMIT 1";
     $stmt = $pdo->prepare($query);
@@ -24,22 +20,35 @@ function updateTokenUser($pdo, $username, $password, $token) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-$pdo = connectDB();
+function sendRequestLoginUser() {
+    $data = json_decode(file_get_contents("php://input"), true);
+    $username = $data["username"] ?? '';
+    $password = password_hash($data['password'], PASSWORD_DEFAULT);
+    
+    $pdo = connectDB();
+    
+    // Validate Username and Password
+    if (!checkUserByUsernameAndPassword($pdo, $username, $password)) {
+        resultResponse(0, 'Failed','Failed to Login');
+    } else {
+        $secretKey = "$password";
+        $token = hash_hmac('sha256', $username . $password, $secretKey);
+    
+        updateTokenUser($pdo, $username, $password, $token);
+    
+        $data = [
+            "token" => $token
+        ];
+    
+        resultResponse(1,'Success','Success to Login', $data);
+    }
+}
 
-// Validate Username and Password
-if (checkUserByUsernameAndPassword($pdo, $username, $password)) {
-    resultResponse(0, 'Failed','Failed to Login');
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    sendRequestLoginUser();
 } else {
-    $secretKey = "$password";
-    $token = hash_hmac('sha256', $username . $password, $secretKey);
-
-    updateTokenUser($pdo, $username, $password, $token);
-
-    $data = [
-        "token" => $token
-    ];
-
-    resultResponse(1,'Success','Success to Login', $data);
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(["error" => "Method not allowed"]);
 }
 
 ?>
