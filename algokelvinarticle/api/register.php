@@ -14,13 +14,10 @@ $password = ''; // Your MySQL password (leave empty for default)
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set the PDO error mode to exception
-    echo"DB Konek";
 } catch (PDOException $e) {
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed: ' . $e->getMessage()]);
     exit;
 }
-
-echo 'Jalan 1';
 
 $data = json_decode(file_get_contents("php://input"), true);
 $nameUser = $data["name_user"] ?? '';
@@ -35,8 +32,6 @@ $created_at = date('Y-m-d');
 $updated_at = date('Y-m-d');
 $created_by = 1;
 $updated_by = 1;
-
-echo 'Jalan 2';
 
 $query = "INSERT INTO ac_user(
     `name_user`, 
@@ -81,6 +76,24 @@ $stmt->bindParam(':created_by', $created_by);
 $stmt->bindParam(':updated_by', $updated_by);
 $stmt->execute();
 
-echo 'Jalan 3';
+// Check if the user exists
+// $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// if ($user) {
+//     echo json_encode([
+//         "status" => "success",
+//         "message"=> "Register successful!"
+//     ]);
+// } else {
+//     echo json_encode([
+//         "status" => "error",
+//         "message"=> "Invalid for Register"
+//     ]);
+// }
+
+echo json_encode([
+    "status" => "success",
+    "message"=> "Register successful!"
+]);
 
 ?>
