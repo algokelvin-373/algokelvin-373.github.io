@@ -26,20 +26,19 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 // Data from Login Page
 $email_user = $data["username"] ?? '';
-$password = $data["password"] ?? '';
+$password = $data['password'] ?? '';
 
 // Prepare the SQL statement to check the username
-$query = "SELECT * FROM ac_user WHERE email_user = :email_user AND password = :password";
+$query = "SELECT * FROM ac_user WHERE email_user = :email_user";
 $stmt = $pdo->prepare($query);
 $stmt->bindParam(':email_user', $email_user);
-$stmt->bindParam(':password', $password);
 $stmt->execute();
 
 // Check if the user exists
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($data) {
-    if ($email_user === $user['email_user'] && $password === $user['password']) {
+    if ($user && password_verify($password, $user['password'])) {
         echo json_encode([
             "status" => "success",
             "message"=> "Login successful!"
