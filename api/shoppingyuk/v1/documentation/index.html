@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation API ShoppingYuk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #aaffaa;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            max-width: 90%;
+            border-radius: 5px;
+            border-color: green;
+            background-color: green;
+            color: #ffffff;
+        }
+        pre {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .layout-api {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        h4 {
+            cursor: pointer;
+            color: black;
+        }
+        h4:hover {
+            text-decoration: underline;
+        }
+        #getProfileUserForm, #loginForm {
+            display: none;
+        }
+        #labelUserId, #userId, #btnSubmitGetProfile, #labelUsername, #username, #labelPassword, #password, #btnSubmitLogin {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Documentation API ShoppingYuk</h1>
+
+    <div class="layout-api">
+        <h1>User</h1>
+        <ul>
+            <li>
+                <h4 id="loginToggle">Login User</h4>
+                <form id="loginForm">
+                    <label id="labelUsername" for="username">Username:</label>
+                    <input id="username" type="text" name="username" required> <br>
+                    <label id="labelPassword" for="password">Password:</label>
+                    <input id="password" type="password" name="password" required> <br>
+                    <button id="btnSubmitLogin" type="submit">Send Request</button>
+                    <div id="resultLogin"></div>
+                </form>
+            </li>
+            <li>
+                <h4 id="registerToogle">Register User</h4>
+            </li>
+            <li>
+                <h4 id="formToggle">Get Profile User</h4>
+                <form id="getProfileUserForm">
+                    <label id="labelUserId" for="userId">User ID:</label>
+                    <input id="userId" type="text" name="userId" required> <br>
+                    <button id="btnSubmitGetProfile" type="submit">Send Request</button>
+                    <div id="resultGetProfile"></div>
+                </form>
+            </li>
+            <li>
+                <h4 id="updateProfileToogle">Update Profile User</h4>
+            </li>
+            <li>
+                <h4 id="deleteAccountToogle">Delete Account User</h4>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function getProfileUser(userId) {
+            return new Promise((resolve, reject) => {
+                fetch(`http://localhost/algokelvin-373.github.io/api/shoppingyuk/v1/user/getProfile.php/${userId}`)
+                    .then(response => {
+                        console.log("Response Jalan")
+                        if (!response.ok) {
+                            reject('Network response was not ok ' + response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(data => resolve(data))
+                    .catch(error => reject('There was a problem with the fetch operation: ' + error));
+            });
+        }
+
+        function loginUser(user) {
+            return new Promise((resolve, reject) => {
+                fetch('http://localhost/algokelvin-373.github.io/api/shoppingyuk/v1/user/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                }).then(response => {
+                    console.log("Response Jalan Login")
+                    if (!response.ok) {
+                        reject('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                }).then(data => resolve(data))
+                .catch(error => reject('There was a problem with the fetch operation: ' + error));
+            });
+        }
+
+        function requestGetProfileUser() {
+            const formToggle = document.getElementById('formToggle');
+            const getProfileUserForm = document.getElementById('getProfileUserForm');
+            const btnSubmitGetProfile = document.getElementById('btnSubmitGetProfile');
+            
+            formToggle.addEventListener('click', function() {
+                getProfileUserForm.style.display = getProfileUserForm.style.display === 'none' ? 'block' : 'none';
+            });
+            btnSubmitGetProfile.addEventListener('click', function (event) {
+                event.preventDefault();
+                const userId = document.getElementById('userId').value;
+                console.log(userId)
+                getProfileUser(userId)
+                    .then(data => {
+                        getProfileUserForm.reset();
+                        const resultDiv = document.getElementById('resultGetProfile');
+                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    }).catch(error => {
+                        alert('Failed to create user: ' + error);
+                    });
+            });
+        }
+
+        function requestLogin() {
+            const loginToggle = document.getElementById('loginToggle');
+            const loginForm = document.getElementById('loginForm');
+            const btnSubmitLogin = document.getElementById('btnSubmitLogin');
+
+            loginToggle.addEventListener('click', function() {
+                loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+            });
+
+            btnSubmitLogin.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                console.log(username);
+
+                loginUser({
+                    username,
+                    password
+                }).then(data => {
+                    loginForm.reset();
+                    const resultDiv = document.getElementById('resultLogin')
+                    resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                }).catch(error => {
+                    alert('Failed to login user: ' + error);
+                })
+            });
+        }
+
+        requestGetProfileUser();
+        requestLogin();
+    </script>
+</body>
+</html>
