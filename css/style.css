@@ -207,6 +207,9 @@ h6,
     }
 }
 
+.hero {
+    padding: 4rem 0;
+}
 
 /*** Hero Header ***/
 .hero-header {
@@ -423,7 +426,9 @@ h6,
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    transform: translateY(-10px);
+    transition: all 0.3s;
 }
 
 .portfolio-item .portfolio-overlay {
@@ -441,6 +446,8 @@ h6,
 }
 
 .portfolio-item:hover .portfolio-overlay {
+    transform: translateY(-10px);
+    transition: all 0.3s;
     opacity: 1;
 }
 
