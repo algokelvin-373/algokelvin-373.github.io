@@ -207,11 +207,14 @@ h6,
     }
 }
 
+.hero {
+    padding: 4rem 0;
+}
 
 /*** Hero Header ***/
 .hero-header {
     margin-bottom: 6rem;
-    padding: 18rem 0;
+    padding: 5rem 0 15rem 0;
     background:
         url(../img/blob-top-left.png),
         url(../img/blob-top-right.png),
@@ -231,7 +234,7 @@ h6,
 
 @media (max-width: 991.98px) {
     .hero-header {
-        padding: 6rem 0 9rem 0;
+        padding: 2rem 0 2rem 0;
     }
 }
 
@@ -423,7 +426,9 @@ h6,
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    transform: translateY(-10px);
+    transition: all 0.3s;
 }
 
 .portfolio-item .portfolio-overlay {
@@ -441,6 +446,8 @@ h6,
 }
 
 .portfolio-item:hover .portfolio-overlay {
+    transform: translateY(-10px);
+    transition: all 0.3s;
     opacity: 1;
 }
 
